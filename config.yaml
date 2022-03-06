@@ -6,18 +6,13 @@ title: Example Site
 
 languages:
   en:
-    languageName: English
-    title: Example Site
+    languageName: 中文
+    title: Bruce Zhang
     weight: 1
   cn:
-    languageName: 中文
-    title: 演示站点
+    languageName: English
+    title: Bruce Zhang
     weight: 2
-  ar:
-    languageName: عربي
-    languagedirection: rtl
-    title: موقع تجريبي
-    weight: 3
 
 # Change it to your Disqus shortname before using
 disqusShortname: hugo-theme-stack
@@ -42,7 +37,7 @@ params:
     - post
   featuredImageField: image
   rssFullContent: true
-  favicon:
+  favicon: https://s3.bmp.ovh/imgs/2022/03/1a249f187078d5d4.jpg
 
   footer:
     since: 2020
@@ -54,7 +49,7 @@ params:
 
   sidebar:
     emoji: 🍥
-    subtitle: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    subtitle: 谁终将声震人间， 必长久深自缄默
     avatar:
       enabled: true
       local: true
@@ -197,15 +192,21 @@ menu:
   social:
     - identifier: github
       name: GitHub
-      url: https://github.com/CaiJimmy/hugo-theme-stack
+      url: https://github.com/bruce2233
       params:
         icon: brand-github
 
-    - identifier: twitter
-      name: Twitter
-      url: https://twitter.com
+    - identifier: wechat
+      name: WeChat
+      url: /about
       params:
-        icon: brand-twitter
+        icon: message-circle
+
+    - identifier: mail
+      name: Mail
+      url: /about
+      params:
+        icon: mail
 
 related:
   includeNewer: true
@@ -235,5 +236,4 @@ markup:
     lineNos: true
     lineNumbersInTable: true
     tabWidth: 4
-
 # ignoreErrors: ["error-remote-getjson"]

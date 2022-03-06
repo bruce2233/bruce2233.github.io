@@ -11,11 +11,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ar"
-                href="https://bruce2233.github.io/ar/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="en"
                 href="https://bruce2233.github.io/"
                 />
@@ -29,38 +24,27 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ar"
-                href="https://bruce2233.github.io/ar/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="en"
                 href="https://bruce2233.github.io/categories/"
                 />
   </url><url>
     <loc>https://bruce2233.github.io/post/</loc>
     <lastmod>2022-03-06T18:21:32+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="cn"
-                href="https://bruce2233.github.io/cn/post/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ar"
-                href="https://bruce2233.github.io/ar/post/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://bruce2233.github.io/post/"
-                />
   </url><url>
     <loc>https://bruce2233.github.io/categories/%E6%97%A5%E5%BF%97/</loc>
     <lastmod>2022-03-06T18:21:32+08:00</lastmod>
   </url><url>
     <loc>https://bruce2233.github.io/p/%E7%9B%98%E5%8F%A4%E5%86%8D%E5%86%8D%E5%86%8D%E5%BC%80%E5%A4%A9/</loc>
     <lastmod>2022-03-06T18:21:32+08:00</lastmod>
+  </url><url>
+    <loc>https://bruce2233.github.io/p/test-chinese/</loc>
+    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://bruce2233.github.io/categories/test/</loc>
+    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://bruce2233.github.io/categories/%E6%B5%8B%E8%AF%95/</loc>
+    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://bruce2233.github.io/archives/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
@@ -102,11 +86,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ar"
-                href="https://bruce2233.github.io/ar/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="en"
                 href="https://bruce2233.github.io/tags/"
                 />
@@ -128,32 +107,9 @@
   </url><url>
     <loc>https://bruce2233.github.io/p/placeholder-text/</loc>
     <lastmod>2019-03-09T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ar"
-                href="https://bruce2233.github.io/ar/p/%D9%85%D8%AB%D8%A7%D9%84-%D9%86%D8%B5/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://bruce2233.github.io/p/placeholder-text/"
-                />
   </url><url>
     <loc>https://bruce2233.github.io/tags/tag-with-whitespaces/</loc>
     <lastmod>2019-03-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://bruce2233.github.io/categories/test/</loc>
-    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="cn"
-                href="https://bruce2233.github.io/cn/categories/test/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://bruce2233.github.io/categories/test/"
-                />
   </url><url>
     <loc>https://bruce2233.github.io/categories/test-with-whitespaces/</loc>
     <lastmod>2019-03-09T00:00:00+00:00</lastmod>
