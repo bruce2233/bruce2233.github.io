@@ -20,6 +20,24 @@
                 href="https://bruce2233.github.io/"
                 />
   </url><url>
+    <loc>https://bruce2233.github.io/categories/</loc>
+    <lastmod>2022-03-06T18:21:32+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="https://bruce2233.github.io/cn/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ar"
+                href="https://bruce2233.github.io/ar/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://bruce2233.github.io/categories/"
+                />
+  </url><url>
     <loc>https://bruce2233.github.io/post/</loc>
     <lastmod>2022-03-06T18:21:32+08:00</lastmod>
     <xhtml:link
@@ -38,6 +56,9 @@
                 href="https://bruce2233.github.io/post/"
                 />
   </url><url>
+    <loc>https://bruce2233.github.io/categories/%E6%97%A5%E5%BF%97/</loc>
+    <lastmod>2022-03-06T18:21:32+08:00</lastmod>
+  </url><url>
     <loc>https://bruce2233.github.io/p/%E7%9B%98%E5%8F%A4%E5%86%8D%E5%86%8D%E5%86%8D%E5%BC%80%E5%A4%A9/</loc>
     <lastmod>2022-03-06T18:21:32+08:00</lastmod>
   </url><url>
@@ -55,24 +76,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://bruce2233.github.io/page/"
-                />
-  </url><url>
-    <loc>https://bruce2233.github.io/categories/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="cn"
-                href="https://bruce2233.github.io/cn/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ar"
-                href="https://bruce2233.github.io/ar/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://bruce2233.github.io/categories/"
                 />
   </url><url>
     <loc>https://bruce2233.github.io/tags/css/</loc>
