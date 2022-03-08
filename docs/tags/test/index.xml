@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Test on Bruce Zhang</title>
+        <link>https://bruce2233.github.io/tags/test/</link>
+        <description>Recent content in Test on Bruce Zhang</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Tue, 08 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://bruce2233.github.io/tags/test/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Go Test 测试</title>
+        <link>https://bruce2233.github.io/p/go-test-%E6%B5%8B%E8%AF%95/</link>
+        <pubDate>Tue, 08 Mar 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://bruce2233.github.io/p/go-test-%E6%B5%8B%E8%AF%95/</guid>
+        <description>&lt;img src="https://bruce2233.github.io/p/go-test-%E6%B5%8B%E8%AF%95/goimg.jpg" alt="Featured image of post Go Test 测试" /&gt;&lt;h1 id=&#34;go-test-测试&#34;&gt;Go test 测试&lt;/h1&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://studygolang.com/pkgdoc&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;img src=&#34;https://img.shields.io/badge/testing-api-brightgreen?style=flat&amp;amp;logo=go&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;go-test&#34;
+	
+	
+&gt;&lt;/a&gt;                &lt;a class=&#34;link&#34; href=&#34;https://github.com/golang/go/tree/master/src/testing&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;img src=&#34;https://img.shields.io/badge/go-testing-brightgreen?style=flat&amp;amp;logo=github&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;go-test&#34;
+	
+	
+&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;go test&lt;/code&gt; 是 Go 标准库中的&lt;code&gt;单元测试&lt;/code&gt;与性能测试系统,也是 go 的&lt;code&gt;子命令&lt;/code&gt;之一&lt;/p&gt;
+&lt;h2 id=&#34;go-test-命令&#34;&gt;go test 命令&lt;/h2&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
