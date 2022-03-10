@@ -28,9 +28,9 @@ image = "goimg.jpg"
 - 测试文件名**必须** 以`_test.go`结尾
 - 测试函数名**必须**以`Test`开头`&&` 参数类型必须为 `*tesing.T`
 - 若测试代码引用包内其他`.go`文件，**必须** 在命令中添加
-- `[文件名] == nil` ==工作目录下所有文件
-- `-run 函数名 == nil` == 工作目录下所有文件
+- `[文件名] == nil` ![](https://latex.codecogs.com/svg.image?\inline&space;\large&space;\Leftrightarrow)工作目录下所有文件
+- `-run 函数名 == nil` ![](https://latex.codecogs.com/svg.image?\inline&space;\large&space;\Leftrightarrow)工作目录下所有文件
 
 `-v` 输出详细测试信息 
 
-`-bench`基准测试参数，待更新......
+`-bench`基准测试参数，待更新......!

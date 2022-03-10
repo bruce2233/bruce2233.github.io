@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='go test命令及单元测试代码规范'><title>Go Test 测试</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='实验结果 测试命令 cd abstractfactory &amp;amp;&amp;amp; go test -v
+环境要求 go1.13&#43;
+接口设计 工厂接口 1 2 3 4 5  type IFactory interface { produceTV() ITV produceFreezer() IFreezer produceAirController() IAirController }   产品接口   1 2 3  type ITV interface { TVSay() }     1 2 3  type IFreezer interface { FreezerSay() }     1 2 3  type IAirController interface { AirControllerSay() }     接口实现   创建HaierFactory, HisenseFactory,TCLFactory共3个工厂结构体，每个工厂实现3个方法，分别返回对应的产品结构体'><title>设计模式之抽象工厂</title>
 
-<link rel='canonical' href='https://bruce2233.github.io/p/go-test-%E6%B5%8B%E8%AF%95/'>
+<link rel='canonical' href='https://bruce2233.github.io/p/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82/'>
 
-<link rel="stylesheet" href="/scss/style.min.e3d0fe9be7461dd8621b5ea39db4b6e1051d8954a351866e85e82516c3d14b92.css"><meta property='og:title' content='Go Test 测试'>
-<meta property='og:description' content='go test命令及单元测试代码规范'>
-<meta property='og:url' content='https://bruce2233.github.io/p/go-test-%E6%B5%8B%E8%AF%95/'>
+<link rel="stylesheet" href="/scss/style.min.e3d0fe9be7461dd8621b5ea39db4b6e1051d8954a351866e85e82516c3d14b92.css"><meta property='og:title' content='设计模式之抽象工厂'>
+<meta property='og:description' content='实验结果 测试命令 cd abstractfactory &amp;amp;&amp;amp; go test -v
+环境要求 go1.13&#43;
+接口设计 工厂接口 1 2 3 4 5  type IFactory interface { produceTV() ITV produceFreezer() IFreezer produceAirController() IAirController }   产品接口   1 2 3  type ITV interface { TVSay() }     1 2 3  type IFreezer interface { FreezerSay() }     1 2 3  type IAirController interface { AirControllerSay() }     接口实现   创建HaierFactory, HisenseFactory,TCLFactory共3个工厂结构体，每个工厂实现3个方法，分别返回对应的产品结构体'>
+<meta property='og:url' content='https://bruce2233.github.io/p/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82/'>
 <meta property='og:site_name' content='Bruce 2233'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Test' /><meta property='article:published_time' content='2022-03-08T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2022-03-08T00:00:00&#43;00:00'/><meta property='og:image' content='https://bruce2233.github.io/p/go-test-%E6%B5%8B%E8%AF%95/goimg.jpg' />
-<meta name="twitter:title" content="Go Test 测试">
-<meta name="twitter:description" content="go test命令及单元测试代码规范"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://bruce2233.github.io/p/go-test-%E6%B5%8B%E8%AF%95/goimg.jpg' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='抽象工厂' /><meta property='article:published_time' content='2022-03-10T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2022-03-10T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="设计模式之抽象工厂">
+<meta name="twitter:description" content="实验结果 测试命令 cd abstractfactory &amp;amp;&amp;amp; go test -v
+环境要求 go1.13&#43;
+接口设计 工厂接口 1 2 3 4 5  type IFactory interface { produceTV() ITV produceFreezer() IFreezer produceAirController() IAirController }   产品接口   1 2 3  type ITV interface { TVSay() }     1 2 3  type IFreezer interface { FreezerSay() }     1 2 3  type IAirController interface { AirControllerSay() }     接口实现   创建HaierFactory, HisenseFactory,TCLFactory共3个工厂结构体，每个工厂实现3个方法，分别返回对应的产品结构体">
     <link rel="shortcut icon" href="https://s3.bmp.ovh/imgs/2022/03/1a249f187078d5d4.jpg" />
 
     </head>
@@ -285,31 +290,15 @@
     </ol>
 </aside>
 <main class="main full-width">
-    <article class="has-image main-article">
+    <article class="main-article">
     <header class="article-header">
-        <div class="article-image">
-            <a href="/p/go-test-%E6%B5%8B%E8%AF%95/">
-                <img src="/p/go-test-%E6%B5%8B%E8%AF%95/goimg_hu459e9ca2f346f870c3b7f9e9c143646b_24574_800x0_resize_q75_box.jpg"
-                        srcset="/p/go-test-%E6%B5%8B%E8%AF%95/goimg_hu459e9ca2f346f870c3b7f9e9c143646b_24574_800x0_resize_q75_box.jpg 800w, /p/go-test-%E6%B5%8B%E8%AF%95/goimg_hu459e9ca2f346f870c3b7f9e9c143646b_24574_1600x0_resize_q75_box.jpg 1600w"
-                        width="800" 
-                        height="533" 
-                        loading="lazy"
-                        alt="Featured image of post Go Test 测试" />
-                
-            </a>
-        </div>
-    
 
     <div class="article-details">
     
     <header class="article-category">
         
-            <a href="/categories/go/" >
-                Go
-            </a>
-        
-            <a href="/categories/%E6%B5%8B%E8%AF%95/" >
-                测试
+            <a href="/categories/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/" >
+                系统设计
             </a>
         
     </header>
@@ -317,13 +306,9 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/go-test-%E6%B5%8B%E8%AF%95/">Go Test 测试</a>
+            <a href="/p/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82/">设计模式之抽象工厂</a>
         </h2>
     
-        
-        <h3 class="article-subtitle">
-            go test命令及单元测试代码规范
-        </h3>
         
     </div>
 
@@ -340,7 +325,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Mar 08, 2022</time>
+                <time class="article-time--published">Mar 10, 2022</time>
             </div>
         
 
@@ -369,30 +354,97 @@
     <section class="article-content">
     
     
-    <h1 id="go-test-测试">Go test 测试</h1>
-<p><a class="link" href="https://studygolang.com/pkgdoc"  target="_blank" rel="noopener"
-    ><img src="https://img.shields.io/badge/testing-api-brightgreen?style=flat&amp;logo=go"
-	
-	
-	
+    <h2 id="实验结果">实验结果</h2>
+<p><img src="/p/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82/abstract_factory_result.png"
+	width="802"
+	height="257"
+	srcset="/p/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82/abstract_factory_result_hu46e30f4cb229bdb00bf3bcd125e44350_35509_480x0_resize_box_3.png 480w, /p/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82/abstract_factory_result_hu46e30f4cb229bdb00bf3bcd125e44350_35509_1024x0_resize_box_3.png 1024w"
 	loading="lazy"
 	
-		alt="go-test"
+		alt="abstract_factory_result"
 	
 	
-></a>                <a class="link" href="https://github.com/golang/go/tree/master/src/testing"  target="_blank" rel="noopener"
-    ><img src="https://img.shields.io/badge/go-testing-brightgreen?style=flat&amp;logo=github"
+		class="gallery-image" 
+		data-flex-grow="312"
+		data-flex-basis="748px"
 	
-	
-	
-	loading="lazy"
-	
-		alt="go-test"
-	
-	
-></a></p>
-<p><code>go test</code> 是 Go 标准库中的<code>单元测试</code>与性能测试系统,也是 go 的<code>子命令</code>之一</p>
-<h2 id="go-test-命令">go test 命令</h2>
+></p>
+<h2 id="测试命令">测试命令</h2>
+<p><code>cd abstractfactory &amp;&amp; go test -v</code></p>
+<h2 id="环境要求">环境要求</h2>
+<p><code>go1.13+</code></p>
+<h2 id="接口设计">接口设计</h2>
+<h3 id="工厂接口">工厂接口</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">IFactory</span> <span class="kd">interface</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">produceTV</span><span class="p">()</span> <span class="nx">ITV</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">produceFreezer</span><span class="p">()</span> <span class="nx">IFreezer</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">produceAirController</span><span class="p">()</span> <span class="nx">IAirController</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="产品接口">产品接口</h3>
+<ul>
+<li>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">ITV</span> <span class="kd">interface</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">TVSay</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">IFreezer</span> <span class="kd">interface</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">FreezerSay</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">IAirController</span> <span class="kd">interface</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">AirControllerSay</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h2 id="接口实现">接口实现</h2>
+<ul>
+<li>
+<p>创建<code>HaierFactory</code>, <code>HisenseFactory</code>,<code>TCLFactory</code>共<strong>3</strong>个工厂结构体，每个工厂实现<code>3</code>个方法，分别返回对应的产品结构体</p>
+</li>
+<li>
+<p>创建<code>[工厂名][产品名]</code>共<strong>9</strong>个产品结构体，每个产品实现对应接口的<code>say</code>方法</p>
+</li>
+</ul>
 
 </section>
 
@@ -401,7 +453,7 @@
     
     <section class="article-tags">
         
-            <a href="/tags/test/">Test</a>
+            <a href="/tags/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82/">抽象工厂</a>
         
     </section>
 
@@ -427,38 +479,6 @@
     
 
     
-
-<aside class="related-contents--wrapper">
-    <h2 class="section-title">Related contents</h2>
-    <div class="related-contents">
-        <div class="flex article-list--tile">
-            
-                
-<article class="has-image">
-    <a href="/p/test-chinese/">
-        
-        
-            <div class="article-image">
-                <img src="/p/test-chinese/_hu45a5e3ad5e058da6a00650ed8fd40bea_15530_27040ddd7399aaf289c0ce70ee6592d9.jpg" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post Chinese Test"
-                        data-key="test-chinese" 
-                        data-hash="md5-RvYejqai34/Fvx0koXxEpg==">
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Chinese Test</h2>
-        </div>
-    </a>
-</article>
-            
-        </div>
-    </div>
-</aside>
 
      
     
@@ -582,7 +602,16 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#go-test-命令">go test 命令</a></li>
+    <li><a href="#实验结果">实验结果</a></li>
+    <li><a href="#测试命令">测试命令</a></li>
+    <li><a href="#环境要求">环境要求</a></li>
+    <li><a href="#接口设计">接口设计</a>
+      <ol>
+        <li><a href="#工厂接口">工厂接口</a></li>
+        <li><a href="#产品接口">产品接口</a></li>
+      </ol>
+    </li>
+    <li><a href="#接口实现">接口实现</a></li>
   </ol>
 </nav>
         </div>
