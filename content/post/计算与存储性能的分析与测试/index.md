@@ -41,10 +41,6 @@ categories:
 
 #### 测试过程
 
-- 检查 CPU 基本信息
-
-  ![cpu_info](CPU信息.png)
-
 - 利用`go`的`benchmark`模块编写`基准测试`程序
 
   ```go
