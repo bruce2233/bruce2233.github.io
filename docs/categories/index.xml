@@ -6,7 +6,39 @@
         <description>Recent content in Categories on Bruce 2233</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Fri, 11 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://bruce2233.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 26 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://bruce2233.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>修身</title>
+        <link>https://bruce2233.github.io/categories/%E4%BF%AE%E8%BA%AB/</link>
+        <pubDate>Sat, 26 Mar 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://bruce2233.github.io/categories/%E4%BF%AE%E8%BA%AB/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>感思</title>
+        <link>https://bruce2233.github.io/categories/%E6%84%9F%E6%80%9D/</link>
+        <pubDate>Fri, 25 Mar 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://bruce2233.github.io/categories/%E6%84%9F%E6%80%9D/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>数学</title>
+        <link>https://bruce2233.github.io/categories/%E6%95%B0%E5%AD%A6/</link>
+        <pubDate>Fri, 25 Mar 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://bruce2233.github.io/categories/%E6%95%B0%E5%AD%A6/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>转载</title>
+        <link>https://bruce2233.github.io/categories/%E8%BD%AC%E8%BD%BD/</link>
+        <pubDate>Fri, 25 Mar 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://bruce2233.github.io/categories/%E8%BD%AC%E8%BD%BD/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>测试</title>
         <link>https://bruce2233.github.io/categories/%E6%B5%8B%E8%AF%95/</link>
         <pubDate>Fri, 11 Mar 2022 00:00:00 +0000</pubDate>
@@ -49,34 +81,10 @@
         <item>
         <title>Test</title>
         <link>https://bruce2233.github.io/categories/test/</link>
-        <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
         <guid>https://bruce2233.github.io/categories/test/</guid>
         <description>&lt;img src="https://bruce2233.github.io/categories/test/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post Test" /&gt;</description>
-        </item>
-        <item>
-        <title>syntax</title>
-        <link>https://bruce2233.github.io/categories/syntax/</link>
-        <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
-        
-        <guid>https://bruce2233.github.io/categories/syntax/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>themes</title>
-        <link>https://bruce2233.github.io/categories/themes/</link>
-        <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
-        
-        <guid>https://bruce2233.github.io/categories/themes/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Test with whitespaces</title>
-        <link>https://bruce2233.github.io/categories/test-with-whitespaces/</link>
-        <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
-        
-        <guid>https://bruce2233.github.io/categories/test-with-whitespaces/</guid>
-        <description></description>
         </item>
         
     </channel>

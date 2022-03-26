@@ -1,9 +1,17 @@
+---
+title: 祖师爷香农之信息论
+date: 2022-03-25
+math: true
+categories: 
+- "数学"
+---
 
 # Markov-Chain 矩阵乘法的理解
 
 Markov-Chain揭示了以概率为转移条件的状态转移规律
 
 ## 矩阵的理解角度
+
 - 矩阵的项是一个2对1的映射
 
 - 矩阵行/列是一组1对1的映射
@@ -13,15 +21,16 @@ Markov-Chain揭示了以概率为转移条件的状态转移规律
 $$a_{ij} : f(i,j) \rightarrow a$$
 
 ## 矩阵乘法的理解角度
+
 对n维向量的每个值做映射，再求和
 $$
 \begin{bmatrix}
-    a_1  \cdots a_n
+    a_1 \cdots a_n
 \end{bmatrix}
 \begin{bmatrix}
-    x_1 \\
-    \vdots\\
-    x_n
+x_1 \cr
+\vdots \cr
+x_n
 \end{bmatrix}
 $$
 
@@ -33,24 +42,21 @@ $$
 - 对每个维度向量映射后求和的理解,即 $\sum_{n=1}^N$
 $$
 \begin{bmatrix}
-    a_{11}& \cdots & a_{1n}\\
-    \vdots&  \ddots & \vdots\\
-    a_{n1} & \cdots & a_{nn}
+a_{11} &\cdots & a_{1n} \cr
+\vdots&  \ddots & \vdots \cr
+a_{n1} & \cdots & a_{nn}
 \end{bmatrix}
 \begin{bmatrix}
-    x_{11}& \cdots & x_{1n}\\
-    \vdots&  \ddots & \vdots\\
+    x_{11}& \cdots & x_{1n}\cr
+    \vdots&  \ddots & \vdots\cr
     x_{n1} & \cdots & x_{nn}
 \end{bmatrix}
 =
 \begin{bmatrix}
-    \sum_{n=1}^N a_{1i}x_{i1}& \cdots & \sum_{n=1}^N a_{1i}x_{in}\\
-    \vdots&  \ddots & \vdots\\
-    \sum_{n=1}^N a_{ni}x_{in}& \cdots & \sum_{n=1}^N a_{ni}x_{in}\\
+\sum_{n=1}^N a_{1i}x_{i1}& \cdots & \sum_{n=1}^N a_{1i}x_{in}\cr
+\vdots&  \ddots & \vdots\cr
+\sum_{n=1}^N a_{ni}x_{in}& \cdots & \sum_{n=1}^N a_{ni}x_{in}\cr
 \end{bmatrix}
-
-=
-y
 $$
 
 $a_{ij}$ 和 $x_{ij}$ 的含义: 从状态i转移到状态j的概率
