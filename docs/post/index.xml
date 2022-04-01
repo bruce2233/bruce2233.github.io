@@ -6,7 +6,16 @@
         <description>Recent content in Posts on Bruce 2233</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Sat, 26 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://bruce2233.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 30 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://bruce2233.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>状态机</title>
+        <link>https://bruce2233.github.io/p/%E7%8A%B6%E6%80%81%E6%9C%BA/</link>
+        <pubDate>Wed, 30 Mar 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://bruce2233.github.io/p/%E7%8A%B6%E6%80%81%E6%9C%BA/</guid>
+        <description>&lt;h1 id=&#34;状态机&#34;&gt;状态机&lt;/h1&gt;
+</description>
+        </item>
+        <item>
         <title>善恶与取势</title>
         <link>https://bruce2233.github.io/p/%E5%96%84%E6%81%B6%E4%B8%8E%E5%8F%96%E5%8A%BF/</link>
         <pubDate>Sat, 26 Mar 2022 00:00:00 +0000</pubDate>
@@ -34,7 +43,7 @@
 所谓恶, 损害外界&lt;/p&gt;
 &lt;p&gt;逆势而行, 利则私, 善则害
 所以君子必以取势为根本,顺天应人,统一善利&lt;/p&gt;
-&lt;p&gt;曹公曾言: 假使天下无有孤,不知几人称王,几人称帝, 也曾说过: 宁使我负天下人, 休教天下人负我. 君子当以生存&lt;/p&gt;
+&lt;p&gt;曹公曾言: 假使天下无有孤,不知几人称王,几人称帝, 也曾说过: 宁使我负天下人, 休教天下人负我. 生存为第一要务.&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -650,6 +659,67 @@ $$&lt;/p&gt;</description>
 </description>
         </item>
         <item>
+        <title></title>
+        <link>https://bruce2233.github.io/p/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://bruce2233.github.io/p/</guid>
+        <description>&lt;h1 id=&#34;数据结构下的进程与线程&#34;&gt;数据结构下的进程与线程&lt;/h1&gt;
+&lt;p&gt;进程是资源分配的最小单位, 对应一个虚拟内存空间
+线程是CPU调度的最小单位, 对应的是一组CPU寄存器,描述了栈的状态
+CS:IP, SS:SP对程序的输出是信息完备的
+程序本质一套函数调用链.利用内存中的数据结构描述函数的规则, 调用CPU真正执行, 
+在线程切换时, 保存CPU的寄存器, 因为&lt;/p&gt;
+&lt;h2 id=&#34;go的并发之道&#34;&gt;go的并发之道&lt;/h2&gt;
+&lt;p&gt;go语言并发采用fork-join模型
+1G内存能创建30多万个goroutine&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title></title>
+        <link>https://bruce2233.github.io/p/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://bruce2233.github.io/p/</guid>
+        <description>&lt;h1 id=&#34;读厚黑&#34;&gt;读厚黑&lt;/h1&gt;
+&lt;p&gt;李宗吾先生病逝后, 其友人挽联如下&lt;/p&gt;
+&lt;p&gt;任瑞如先生挽曰——
+“教主归冥府，继续阐扬厚黑，使一般孤魂野鬼，早得升官发财门径；先生辞凡尘，不再讽刺社会，让那些污吏劣绅，做出狼心狗肺事情。”&lt;/p&gt;
+&lt;p&gt;李坚白先生挽曰——
+“寓讽刺于厚黑，仙佛心肠，与千正言先后辉映；致精力乎著述，贤哲品学，拟念四史今古齐名。”&lt;/p&gt;
+&lt;p&gt;此所谓辩证!&lt;/p&gt;
+&lt;p&gt;孟子曰:行之而不著焉，习矣而不察焉，终身由之而不知其道者，众也&lt;/p&gt;
+&lt;p&gt;当今之世道, 厚黑岂需著? 世人行而不著, 习而不察, 不得法!&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title></title>
+        <link>https://bruce2233.github.io/p/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://bruce2233.github.io/p/</guid>
+        <description>&lt;h1 id=&#34;设计进程通信协议-实现逻辑约束&#34;&gt;设计进程通信协议, 实现逻辑约束&lt;/h1&gt;
+</description>
+        </item>
+        <item>
+        <title></title>
+        <link>https://bruce2233.github.io/p/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://bruce2233.github.io/p/</guid>
+        <description>&lt;h1 id=&#34;随笔&#34;&gt;随笔&lt;/h1&gt;
+&lt;h2 id=&#34;什么是信仰&#34;&gt;什么是信仰?&lt;/h2&gt;
+&lt;p&gt;信仰就是最高利益
+人的一切行为都围绕两个: 兽性和信仰
+信仰是为了实现兽性
+信仰是思想钢印, 需要无条件执行, 这就是人的动力来源, 也是保证人行为稳定性的源头
+一个用脑子, 一个不用脑子
+人连自己想要什么都不清楚怎么可能得到它呢?
+以利益驱使一来成本太高,二来效果差, 三来人和人走向了对立面
+而已信仰驱使让人团结, 成为了同志,提高自己的劳动效率, 因为稳定性与经验的积累,提高了公司人均的劳动效率&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>农民工的褒贬转变</title>
         <link>https://bruce2233.github.io/p/%E5%86%9C%E6%B0%91%E5%B7%A5%E7%9A%84%E8%A4%92%E8%B4%AC%E8%BD%AC%E5%8F%98/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -738,6 +808,28 @@ $$&lt;/p&gt;</description>
 冥王：当我到达高处，便发觉自己总是孤独。无人同我说话，孤寂的严冬令我发抖，我在高处究竟意欲何为。
 直到今天，重温这段依然哑口无言，就不用说当年那个抱着饭碗等在电视剧前的小男孩了。&lt;/p&gt;
 &lt;/blockquote&gt;
+</description>
+        </item>
+        <item>
+        <title>造反与革命</title>
+        <link>https://bruce2233.github.io/p/%E9%80%A0%E5%8F%8D%E4%B8%8E%E9%9D%A9%E5%91%BD/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://bruce2233.github.io/p/%E9%80%A0%E5%8F%8D%E4%B8%8E%E9%9D%A9%E5%91%BD/</guid>
+        <description>&lt;h1 id=&#34;作者-q帝&#34;&gt;作者: Q帝&lt;/h1&gt;
+&lt;h1 id=&#34;链接httpwwwmou5compost-7html&#34;&gt;链接:http://www.mou5.com/post-7.html&lt;/h1&gt;
+&lt;p&gt;造反团伙是革命团队的前途是不一样的
+2014-8-23 Q帝 权谋分享&lt;/p&gt;
+&lt;p&gt;看史记，陈胜吴广的传记，以及后来的项梁的团队。以及我脑子里闪出来的各种政变的故事。
+我发现一个规律，就是造反的团伙是一时的。而革命团队却是能够持久。
+原因，我思考如下。
+1、【共同利益和共同理想的区别】
+造反团队是利益媾和，为了重新分配利益和权力而不是为了共同的理想。利益之后，还会矛盾重重。利同则聚，利散则分。陈涉大泽乡遇雨失期，不反死，反亦斯，所以就为了保命的前提下开始了反抗。这个保命的目的达到后，并没有及时的为团队提供前途，继而利益分派不均，立刻消亡。
+2、【乌合之众和众志成城的区别】
+造反团队是乌合之众，大家彼此只是为了解决共同的利益而走到一起来的，分工什么的，并不完善，且各怀鬼胎。陈涉揭竿起义之后，分派了很多人去打仗，分出去的人，大多自立为王，不在听从调度了。而刘邦团队则是无论打下什么都是继续聚合在一起争取更大的胜利。
+3、【临时起意和持久准备的区别】
+很多造反行为都是临时起意，具有仓促性。人才储备，舆论宣传，理论准备都不到位。而持久准备的就早就开始着手各种工作，人才的发现和培养，舆论的宣传和发动等，项梁在安排丧事的时候都按照军事训练的办法指挥的。
+临时看书的一点想法，纪录再此，一边以后深入思考。&lt;/p&gt;
 </description>
         </item>
         <item>
