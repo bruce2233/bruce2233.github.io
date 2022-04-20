@@ -40,6 +40,28 @@
 </description>
         </item>
         <item>
+        <title>NP问题</title>
+        <link>https://bruce2233.github.io/p/np%E9%97%AE%E9%A2%98/</link>
+        <pubDate>Sun, 10 Apr 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://bruce2233.github.io/p/np%E9%97%AE%E9%A2%98/</guid>
+        <description>&lt;h1 id=&#34;np问题&#34;&gt;NP问题&lt;/h1&gt;
+&lt;h2 id=&#34;概念含义&#34;&gt;概念含义&lt;/h2&gt;
+&lt;p&gt;P问题: 多项式复杂度求问题的解, 本质是信息精简
+NP问题:  无法用多项式复杂度求问题的解, 对于一个给定的解可以在多项式时间内验证, 本质也是信息精简
+NPC问题: 任何NP问题都可以通过多项式复杂度转化为NPC问题
+求解: 熵减, 在没有其他信息情况下是不可能的
+SAT(The Satisfiability Problem)问题: n个变量的逻辑表达式, 判断是否存在真值&lt;/p&gt;
+&lt;h2 id=&#34;思考&#34;&gt;思考&lt;/h2&gt;
+&lt;p&gt;我个人一直是对NP问题有抵触心理的, 具体体现在喜欢物理推演, 而厌恶化学对一个&lt;/p&gt;
+&lt;p&gt;我好像明白为什么微积分为什么这么恶心了.&lt;/p&gt;
+&lt;p&gt;今天明白了NP问题和P问题&lt;/p&gt;
+&lt;p&gt;微积分很多题都是NP问题, 必须先有解,然后去验证
+教授指导学生写论文也是NP问题, 大部分情况出错后再改&lt;/p&gt;
+&lt;p&gt;试图找通法&amp;quot;金钥匙&amp;quot;不是多项式复杂度, 根本就不可能&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>国际通信自由协会(WCFO)</title>
         <link>https://bruce2233.github.io/p/%E5%9B%BD%E9%99%85%E9%80%9A%E4%BF%A1%E8%87%AA%E7%94%B1%E5%8D%8F%E4%BC%9Awcfo/</link>
         <pubDate>Mon, 04 Apr 2022 00:00:00 +0000</pubDate>
@@ -779,6 +801,8 @@ CS:IP, SS:SP对程序的输出是信息完备的
 &lt;p&gt;中国的经济建立在寻租的基础上, 土地, 审批权力, 资本掌握&lt;/p&gt;
 &lt;h2 id=&#34;禁枪&#34;&gt;禁枪&lt;/h2&gt;
 &lt;p&gt;最开始要求人们每把枪都要有牌照, 只要申请就可以获得牌照, 同时奖励举报无牌持枪. 所有的枪都有拍照了.&lt;/p&gt;
+&lt;h2 id=&#34;政治与科学的力量源头&#34;&gt;政治与科学的力量源头&lt;/h2&gt;
+&lt;p&gt;政治的力量源头是共识, 科学的力量源头是自然规律. 共识可能会颠覆, 而自然规律是永恒的.&lt;/p&gt;
 </description>
         </item>
         <item>
