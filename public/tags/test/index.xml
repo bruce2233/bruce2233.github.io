@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Test on Bruce 2233</title>
+    <link>https://bruce2233.github.io/tags/test/</link>
+    <description>Recent content in Test on Bruce 2233</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 08 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://bruce2233.github.io/tags/test/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>单元测试神器之go test</title>
+      <link>https://bruce2233.github.io/p/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E7%A5%9E%E5%99%A8%E4%B9%8Bgo-test/</link>
+      <pubDate>Tue, 08 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://bruce2233.github.io/p/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E7%A5%9E%E5%99%A8%E4%B9%8Bgo-test/</guid>
+      <description>​  
+go test 是 Go 标准库中的单元测试与性能测试系统,也是 go 的子命令之一
+go test 命令及常用参数 go test [文件名] [-run 函数名]执行工作目录下[文件名]内函数名
+ 测试文件名必须 以_test.go结尾 测试函数名必须以Test开头&amp;amp;&amp;amp; 参数类型必须为 *tesing.T 若测试代码引用包内其他.go文件，必须 在命令中添加 [文件名] == nil 工作目录下所有文件 -run 函数名 == nil 工作目录下所有文件  -v 输出详细测试信息
+-bench基准测试参数，待更新&amp;hellip;&amp;hellip;!</description>
+    </item>
+    
+  </channel>
+</rss>
