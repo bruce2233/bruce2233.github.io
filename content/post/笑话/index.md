@@ -1,9 +1,8 @@
 ---
-title: 笑话合集
-date: 2022-04-16
+title: 幽默
 author: 张野
 categories:
-- 笑话
+- 幽默
 ---
 
 在意识到PPT的图灵完备性后, APP Store团队紧急下架了该软件.

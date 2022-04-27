@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://bruce2233.github.io/</loc>
-    <lastmod>2022-04-16T00:00:00+00:00</lastmod>
+    <lastmod>2022-04-27T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="cn"
@@ -16,7 +16,7 @@
                 />
   </url><url>
     <loc>https://bruce2233.github.io/categories/</loc>
-    <lastmod>2022-04-16T00:00:00+00:00</lastmod>
+    <lastmod>2022-04-27T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="cn"
@@ -29,13 +29,13 @@
                 />
   </url><url>
     <loc>https://bruce2233.github.io/post/</loc>
-    <lastmod>2022-04-16T00:00:00+00:00</lastmod>
+    <lastmod>2022-04-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://bruce2233.github.io/categories/%E7%AC%91%E8%AF%9D/</loc>
-    <lastmod>2022-04-16T00:00:00+00:00</lastmod>
+    <loc>https://bruce2233.github.io/categories/%E6%84%9F%E6%80%9D/</loc>
+    <lastmod>2022-04-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://bruce2233.github.io/p/%E7%AC%91%E8%AF%9D%E5%90%88%E9%9B%86/</loc>
-    <lastmod>2022-04-16T00:00:00+00:00</lastmod>
+    <loc>https://bruce2233.github.io/p/%E7%9F%9B%E7%9B%BE%E4%B8%8E%E6%96%97%E4%BA%89/</loc>
+    <lastmod>2022-04-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://bruce2233.github.io/p/%E6%BA%90%E4%BB%A3%E7%A0%81%E7%9C%9F%E5%AE%9E%E4%B8%8E%E6%A8%A1%E6%8B%9F/</loc>
     <lastmod>2022-04-12T00:00:00+00:00</lastmod>
@@ -53,9 +53,6 @@
     <lastmod>2022-03-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://bruce2233.github.io/p/94%E7%89%88%E4%B8%89%E5%9B%BD%E7%9A%84%E6%A2%A6%E4%B8%8E%E7%88%B1/</loc>
-    <lastmod>2022-03-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://bruce2233.github.io/categories/%E6%84%9F%E6%80%9D/</loc>
     <lastmod>2022-03-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://bruce2233.github.io/categories/%E6%95%B0%E5%AD%A6/</loc>
@@ -166,6 +163,10 @@
     <loc>https://bruce2233.github.io/p/%E5%86%9C%E6%B0%91%E5%B7%A5%E7%9A%84%E8%A4%92%E8%B4%AC%E8%BD%AC%E5%8F%98/</loc>
   </url><url>
     <loc>https://bruce2233.github.io/p/%E5%90%B4%E7%94%A8%E4%B8%8E%E8%AF%B8%E8%91%9B%E4%BA%AE/</loc>
+  </url><url>
+    <loc>https://bruce2233.github.io/categories/%E5%B9%BD%E9%BB%98/</loc>
+  </url><url>
+    <loc>https://bruce2233.github.io/p/%E5%B9%BD%E9%BB%98/</loc>
   </url><url>
     <loc>https://bruce2233.github.io/p/%E5%BC%82%E5%8C%96%E5%8A%B3%E5%8A%A8/</loc>
   </url><url>
