@@ -110,9 +110,8 @@ SAT(The Satisfiability Problem)问题: n个变量的逻辑表达式, 判断是�
         <description>&lt;h1 id=&#34;94版三国演义&#34;&gt;94版三国演义&lt;/h1&gt;
 &lt;p&gt;佩服于曹操的文韬武略. 凌云壮志. 刘备的仁德宽厚. 董卓的气量与手腕. 邹氏的凄美,典韦的忠勇&lt;/p&gt;
 &lt;p&gt;忆起读龙族的少年时光&lt;/p&gt;
-&lt;p&gt;雨中江畔小亭下, 琴声入耳.
-回想起清源山中 一湾湖水, 桥上远望, 泉州灯火阑珊.&lt;/p&gt;
-&lt;p&gt;剧中人引起观者不禁也想活出英雄风范, 上演三国故事.&lt;/p&gt;
+&lt;p&gt;雨中江畔小亭下, 琴声入耳.&lt;/p&gt;
+&lt;p&gt;回想起清源山中 一湾湖水, 桥上远望, 泉州灯火阑珊.&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -735,6 +734,107 @@ $$&lt;/p&gt;</description>
 &lt;p&gt;Websites built with Hugo are extremelly fast, secure and can be deployed anywhere including, AWS, GitHub Pages, Heroku, Netlify and any other hosting provider.&lt;/p&gt;
 &lt;p&gt;Learn more and contribute on &lt;a class=&#34;link&#34; href=&#34;https://github.com/gohugoio&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title></title>
+        <link>https://bruce2233.github.io/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://bruce2233.github.io/</guid>
+        <description>&lt;h1 id=&#34;contributing&#34;&gt;Contributing&lt;/h1&gt;
+&lt;p&gt;Changes and improvements are more than welcome! Feel free to fork and open a pull request.&lt;/p&gt;
+&lt;p&gt;Please follow the house rules to have a bigger chance of your contribution being merged.&lt;/p&gt;
+&lt;h2 id=&#34;house-rules&#34;&gt;House rules&lt;/h2&gt;
+&lt;h3 id=&#34;how-to-make-changes&#34;&gt;How to make changes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;To make changes, create a new branch based on &lt;code&gt;master&lt;/code&gt; (do not create one from &lt;code&gt;gh-pages&lt;/code&gt; unless strictly necessary) and make them there, then create a Pull Request to master.&lt;br&gt;
+&lt;code&gt;gh-pages&lt;/code&gt; is different from master in that it contains sharing features, analytics and other things that have no direct bearing with the game. &lt;code&gt;master&lt;/code&gt; is the &amp;ldquo;pure&amp;rdquo; version of the game.&lt;/li&gt;
+&lt;li&gt;If you want to modify the CSS, please edit the SCSS files present in &lt;code&gt;style/&lt;/code&gt;: &lt;code&gt;main.scss&lt;/code&gt; and others. Don&amp;rsquo;t edit the &lt;code&gt;main.css&lt;/code&gt;, because it&amp;rsquo;s supposed to be generated.&lt;br&gt;
+In order to compile your SCSS modifications, you need to use the &lt;code&gt;sass&lt;/code&gt; gem (install it by running &lt;code&gt;gem install sass&lt;/code&gt; once Ruby is installed).&lt;br&gt;
+To run SASS, simply use the following command:&lt;br&gt;
+&lt;code&gt;sass --unix-newlines --watch style/main.scss&lt;/code&gt;&lt;br&gt;
+SASS will automatically recompile your css when changed.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Rakefile&lt;/code&gt; contains some tasks that help during development. Feel free to add useful tasks if needed.&lt;/li&gt;
+&lt;li&gt;Please use 2-space indentation when editing the JavaScript. A &lt;code&gt;.jshintrc&lt;/code&gt; file is present, which will help your code to follow the guidelines if you install and run &lt;code&gt;jshint&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Please test your modification thoroughly before submitting your Pull Request.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;changes-that-might-not-be-accepted&#34;&gt;Changes that might not be accepted&lt;/h3&gt;
+&lt;p&gt;We have to be conservative with the core game. This means that some modifications won&amp;rsquo;t be merged, or will have to be evaluated carefully before being merged:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Undo/redo features&lt;/li&gt;
+&lt;li&gt;Save/reload features&lt;/li&gt;
+&lt;li&gt;Changes to how the tiles look or their contents&lt;/li&gt;
+&lt;li&gt;Changes to the layout&lt;/li&gt;
+&lt;li&gt;Changes to the grid size&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;changes-that-are-welcome&#34;&gt;Changes that are welcome&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Bug fixes&lt;/li&gt;
+&lt;li&gt;Compatibility improvements&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;Under the hood&amp;rdquo; enhancements&lt;/li&gt;
+&lt;li&gt;Small changes that don&amp;rsquo;t have an impact on the core gameplay&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title></title>
+        <link>https://bruce2233.github.io/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://bruce2233.github.io/</guid>
+        <description>&lt;h1 id=&#34;2048---岛石版&#34;&gt;2048 &amp;ndash;岛石版&lt;/h1&gt;
+&lt;p&gt;一键安装部署:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    docker run --name 2048-nginx -d -p 8080:80 bruce996/2048
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;A small clone of &lt;a class=&#34;link&#34; href=&#34;https://play.google.com/store/apps/details?id=com.veewo.a1024&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;1024&lt;/a&gt;, based on &lt;a class=&#34;link&#34; href=&#34;http://saming.fr/p/2048/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Saming&amp;rsquo;s 2048&lt;/a&gt; (also a clone).&lt;/p&gt;
+&lt;p&gt;Made just for fun. &lt;a class=&#34;link&#34; href=&#34;http://gabrielecirulli.github.io/2048/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Play it here!&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The official app can also be found on the &lt;a class=&#34;link&#34; href=&#34;https://play.google.com/store/apps/details?id=com.gabrielecirulli.app2048&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Play Store&lt;/a&gt; and &lt;a class=&#34;link&#34; href=&#34;https://itunes.apple.com/us/app/2048-by-gabriele-cirulli/id868076805&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;App Store!&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;contributions&#34;&gt;Contributions&lt;/h3&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/iirelu/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Anna Harren&lt;/a&gt; and &lt;a class=&#34;link&#34; href=&#34;https://github.com/sigod&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;sigod&lt;/a&gt; are maintainers for this repository.&lt;/p&gt;
+&lt;p&gt;Other notable contributors:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/TimPetricola&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;TimPetricola&lt;/a&gt; added best score storage&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/chrisprice&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;chrisprice&lt;/a&gt; added custom code for swipe handling on mobile&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/marcingajda&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;marcingajda&lt;/a&gt; made swipes work on Windows Phone&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/mgarciaisaia&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;mgarciaisaia&lt;/a&gt; added support for Android 2.3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Many thanks to &lt;a class=&#34;link&#34; href=&#34;https://github.com/rayhaanj&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;rayhaanj&lt;/a&gt;, &lt;a class=&#34;link&#34; href=&#34;https://github.com/Mechazawa&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Mechazawa&lt;/a&gt;, &lt;a class=&#34;link&#34; href=&#34;https://github.com/grant&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;grant&lt;/a&gt;, &lt;a class=&#34;link&#34; href=&#34;https://github.com/remram44&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;remram44&lt;/a&gt; and &lt;a class=&#34;link&#34; href=&#34;https://github.com/ghoullier&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;ghoullier&lt;/a&gt; for the many other good contributions.&lt;/p&gt;
+&lt;h3 id=&#34;screenshot&#34;&gt;Screenshot&lt;/h3&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;That screenshot is fake, by the way. I never reached 2048 :smile:&lt;/p&gt;
+&lt;h2 id=&#34;contributing&#34;&gt;Contributing&lt;/h2&gt;
+&lt;p&gt;Changes and improvements are more than welcome! Feel free to fork and open a pull request. Please make your changes in a specific branch and request to pull into &lt;code&gt;master&lt;/code&gt;! If you can, please make sure the game fully works before sending the PR, as that will help speed up the process.&lt;/p&gt;
+&lt;p&gt;You can find the same information in the &lt;a class=&#34;link&#34; href=&#34;https://github.com/gabrielecirulli/2048/blob/master/CONTRIBUTING.md&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;contributing guide.&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;license&#34;&gt;License&lt;/h2&gt;
+&lt;p&gt;2048 is licensed under the &lt;a class=&#34;link&#34; href=&#34;https://github.com/gabrielecirulli/2048/blob/master/LICENSE.txt&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;MIT license.&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;donations&#34;&gt;Donations&lt;/h2&gt;
+&lt;p&gt;I made this in my spare time, and it&amp;rsquo;s hosted on GitHub (which means I don&amp;rsquo;t have any hosting costs), but if you enjoyed the game and feel like buying me coffee, you can donate at my BTC address: &lt;code&gt;1Ec6onfsQmoP9kkL3zkpB6c5sA4PVcXU2i&lt;/code&gt;. Thank you very much!&lt;/p&gt;
+&lt;h1 id=&#34;daoshi-2048&#34;&gt;daoshi-2048&lt;/h1&gt;
 </description>
         </item>
         <item>
