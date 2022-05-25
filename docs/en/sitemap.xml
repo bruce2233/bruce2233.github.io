@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://bruce2233.github.io/</loc>
-    <lastmod>2022-05-13T00:00:00+00:00</lastmod>
+    <lastmod>2022-05-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="cn"
@@ -16,7 +16,7 @@
                 />
   </url><url>
     <loc>https://bruce2233.github.io/categories/</loc>
-    <lastmod>2022-05-13T00:00:00+00:00</lastmod>
+    <lastmod>2022-05-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="cn"
@@ -28,8 +28,14 @@
                 href="https://bruce2233.github.io/categories/"
                 />
   </url><url>
+    <loc>https://bruce2233.github.io/categories/it/</loc>
+    <lastmod>2022-05-25T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://bruce2233.github.io/post/</loc>
-    <lastmod>2022-05-13T00:00:00+00:00</lastmod>
+    <lastmod>2022-05-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://bruce2233.github.io/p/%E8%B7%A8%E8%BF%87%E9%95%BF%E5%9F%8E-%E8%B5%B0%E5%90%91%E4%B8%96%E7%95%8C/</loc>
+    <lastmod>2022-05-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://bruce2233.github.io/categories/%E4%BA%A4%E6%98%93/</loc>
     <lastmod>2022-05-13T00:00:00+00:00</lastmod>
