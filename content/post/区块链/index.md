@@ -16,4 +16,9 @@ categories:
 区块链提供了交易的自动化
 
 ## ERC20-Air Coin
-⟑
+"I can't breath, I need AIR"
+众所周知，空气币最大的特点是流动性差
+所以xx有存款的抓紧提现吧，兑换成我的AirCoin(⟑)
+最起码我能保证持有者(jiucai)归零后不用挨揍
+这就是tx为我们探索的AI识图和语义识别应用场景吗
+pyq第三次测试
