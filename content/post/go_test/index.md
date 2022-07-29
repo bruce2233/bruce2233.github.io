@@ -2,7 +2,7 @@
 
 author = "YunPeng Zhang"
 title = "单元测试神器之go test"
-date = "2022-03-08"
+date = "2022-07-27"
 categories = [
 "Go",
 
@@ -34,3 +34,6 @@ image = "goimg.jpg"
 `-v` 输出详细测试信息 
 
 `-bench`基准测试参数，待更新......!
+
+>排坑!
+`-count=1` 不使用go test 缓存. 缓存模式下如代码不变则直接打印输出上次测试的结果, 不会真正执行`TestXXX`函数.
