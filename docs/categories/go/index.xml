@@ -6,10 +6,69 @@
         <description>Recent content in Go on Bruce 2233</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Tue, 08 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://bruce2233.github.io/categories/go/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 29 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://bruce2233.github.io/categories/go/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>golang 随笔</title>
+        <link>https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94/</link>
+        <pubDate>Fri, 29 Jul 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94/</guid>
+        <description>&lt;h1 id=&#34;golang-随笔&#34;&gt;golang 随笔&lt;/h1&gt;
+&lt;h2 id=&#34;多级指针与图描述的映射-理清指针的终极解决方案&#34;&gt;多级指针与图描述的映射-理清指针的终极解决方案&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;直观的图描述
+&lt;ul&gt;
+&lt;li&gt;一个变量对应一个节点&lt;/li&gt;
+&lt;li&gt;指针变量与被指向变量之间用一条线连接
+&lt;img src=&#34;https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94/pointer1.jpg&#34;
+	width=&#34;1840&#34;
+	height=&#34;1717&#34;
+	srcset=&#34;https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94/pointer1_hu07d8f38f6d3cd28c675821f9d7aec641_269521_480x0_resize_q75_box.jpg 480w, https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94/pointer1_hu07d8f38f6d3cd28c675821f9d7aec641_269521_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;107&#34;
+		data-flex-basis=&#34;257px&#34;
+	
+&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;指针操作与图的映射
+&lt;ul&gt;
+&lt;li&gt;左侧指针,右侧取地址&lt;code&gt;&amp;amp;&lt;/code&gt; 左侧变量的节点指向&amp;amp;符后的变量节点, 实例见图: &lt;code&gt;c = &amp;amp;a&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;左侧指针,右侧指针&lt;code&gt;=&lt;/code&gt; 左侧变量节点指向右侧变量节点指向的节点, 例: &lt;code&gt;e = d&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;指针取内容&lt;code&gt;*&lt;/code&gt; 指针变量取地址的表达式等价于它所指向的节点, 例: &lt;code&gt;*d == c&lt;/code&gt;
+&lt;img src=&#34;https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94/pointer2.jpg&#34;
+	width=&#34;2249&#34;
+	height=&#34;1717&#34;
+	srcset=&#34;https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94/pointer2_hu2400c2f9ef7df9fb69513a09dd0ce584_290359_480x0_resize_q75_box.jpg 480w, https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94/pointer2_hu2400c2f9ef7df9fb69513a09dd0ce584_290359_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;130&#34;
+		data-flex-basis=&#34;314px&#34;
+	
+&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;注意事项
+&lt;ul&gt;
+&lt;li&gt;关注变量类型&lt;/li&gt;
+&lt;li&gt;节点只能修改后继节点的值而无法修改兄弟节点的指向&lt;/li&gt;
+&lt;li&gt;golang中的接口可理解为&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果你能熟练运用3条操作,恭喜你解锁了多层指针的黑魔法. 从此, 程序猿之间的隔阂将被打破(物理级), 所以, 奔涌吧, 多层指针!&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        </item>
+        <item>
         <title>单元测试神器之go test</title>
         <link>https://bruce2233.github.io/p/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E7%A5%9E%E5%99%A8%E4%B9%8Bgo-test/</link>
-        <pubDate>Tue, 08 Mar 2022 00:00:00 +0000</pubDate>
+        <pubDate>Wed, 27 Jul 2022 00:00:00 +0000</pubDate>
         
         <guid>https://bruce2233.github.io/p/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E7%A5%9E%E5%99%A8%E4%B9%8Bgo-test/</guid>
         <description>&lt;img src="https://bruce2233.github.io/p/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E7%A5%9E%E5%99%A8%E4%B9%8Bgo-test/goimg.jpg" alt="Featured image of post 单元测试神器之go test" /&gt;&lt;p&gt;​                                                            &lt;a class=&#34;link&#34; href=&#34;https://studygolang.com/pkgdoc&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -59,6 +118,10 @@
 &lt;/ul&gt;
 &lt;p&gt;&lt;code&gt;-v&lt;/code&gt; 输出详细测试信息&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;-bench&lt;/code&gt;基准测试参数，待更新&amp;hellip;&amp;hellip;!&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;排坑!
+&lt;code&gt;-count=1&lt;/code&gt; 不使用go test 缓存. 缓存模式下如代码不变则直接打印输出上次测试的结果, 不会真正执行&lt;code&gt;TestXXX&lt;/code&gt;函数.&lt;/p&gt;
+&lt;/blockquote&gt;
 </description>
         </item>
         

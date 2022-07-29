@@ -5,7 +5,9 @@
 go test 是 Go 标准库中的单元测试与性能测试系统,也是 go 的子命令之一
 go test 命令及常用参数 go test [文件名] [-run 函数名]执行工作目录下[文件名]内函数名
  测试文件名必须 以_test.go结尾 测试函数名必须以Test开头&amp;amp;&amp;amp; 参数类型必须为 *tesing.T 若测试代码引用包内其他.go文件，必须 在命令中添加 [文件名] == nil 工作目录下所有文件 -run 函数名 == nil 工作目录下所有文件  -v 输出详细测试信息
--bench基准测试参数，待更新&amp;hellip;&amp;hellip;!'><title>单元测试神器之go test</title>
+-bench基准测试参数，待更新&amp;hellip;&amp;hellip;!
+ 排坑! -count=1 不使用go test 缓存. 缓存模式下如代码不变则直接打印输出上次测试的结果, 不会真正执行TestXXX函数.
+ '><title>单元测试神器之go test</title>
 
 <link rel='canonical' href='https://bruce2233.github.io/p/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E7%A5%9E%E5%99%A8%E4%B9%8Bgo-test/'>
 
@@ -14,16 +16,20 @@ go test 命令及常用参数 go test [文件名] [-run 函数名]执行工作�
 go test 是 Go 标准库中的单元测试与性能测试系统,也是 go 的子命令之一
 go test 命令及常用参数 go test [文件名] [-run 函数名]执行工作目录下[文件名]内函数名
  测试文件名必须 以_test.go结尾 测试函数名必须以Test开头&amp;amp;&amp;amp; 参数类型必须为 *tesing.T 若测试代码引用包内其他.go文件，必须 在命令中添加 [文件名] == nil 工作目录下所有文件 -run 函数名 == nil 工作目录下所有文件  -v 输出详细测试信息
--bench基准测试参数，待更新&amp;hellip;&amp;hellip;!'>
+-bench基准测试参数，待更新&amp;hellip;&amp;hellip;!
+ 排坑! -count=1 不使用go test 缓存. 缓存模式下如代码不变则直接打印输出上次测试的结果, 不会真正执行TestXXX函数.
+ '>
 <meta property='og:url' content='https://bruce2233.github.io/p/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E7%A5%9E%E5%99%A8%E4%B9%8Bgo-test/'>
 <meta property='og:site_name' content='Bruce 2233'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Test' /><meta property='article:published_time' content='2022-03-08T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2022-03-08T00:00:00&#43;00:00'/><meta property='og:image' content='https://bruce2233.github.io/p/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E7%A5%9E%E5%99%A8%E4%B9%8Bgo-test/goimg.jpg' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Test' /><meta property='article:published_time' content='2022-07-27T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2022-07-27T00:00:00&#43;00:00'/><meta property='og:image' content='https://bruce2233.github.io/p/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E7%A5%9E%E5%99%A8%E4%B9%8Bgo-test/goimg.jpg' />
 <meta name="twitter:title" content="单元测试神器之go test">
 <meta name="twitter:description" content="​  
 go test 是 Go 标准库中的单元测试与性能测试系统,也是 go 的子命令之一
 go test 命令及常用参数 go test [文件名] [-run 函数名]执行工作目录下[文件名]内函数名
  测试文件名必须 以_test.go结尾 测试函数名必须以Test开头&amp;amp;&amp;amp; 参数类型必须为 *tesing.T 若测试代码引用包内其他.go文件，必须 在命令中添加 [文件名] == nil 工作目录下所有文件 -run 函数名 == nil 工作目录下所有文件  -v 输出详细测试信息
--bench基准测试参数，待更新&amp;hellip;&amp;hellip;!"><meta name="twitter:card" content="summary_large_image">
+-bench基准测试参数，待更新&amp;hellip;&amp;hellip;!
+ 排坑! -count=1 不使用go test 缓存. 缓存模式下如代码不变则直接打印输出上次测试的结果, 不会真正执行TestXXX函数.
+ "><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://bruce2233.github.io/p/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E7%A5%9E%E5%99%A8%E4%B9%8Bgo-test/goimg.jpg' />
     <link rel="shortcut icon" href="https://s3.bmp.ovh/imgs/2022/03/1a249f187078d5d4.jpg" />
 
@@ -348,7 +354,7 @@ go test 命令及常用参数 go test [文件名] [-run 函数名]执行工作�
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Mar 08, 2022</time>
+                <time class="article-time--published">Jul 27, 2022</time>
             </div>
         
 
@@ -424,6 +430,10 @@ go test 命令及常用参数 go test [文件名] [-run 函数名]执行工作�
 </ul>
 <p><code>-v</code> 输出详细测试信息</p>
 <p><code>-bench</code>基准测试参数，待更新&hellip;&hellip;!</p>
+<blockquote>
+<p>排坑!
+<code>-count=1</code> 不使用go test 缓存. 缓存模式下如代码不变则直接打印输出上次测试的结果, 不会真正执行<code>TestXXX</code>函数.</p>
+</blockquote>
 
 </section>
 
@@ -463,6 +473,18 @@ go test 命令及常用参数 go test [文件名] [-run 函数名]执行工作�
     <h2 class="section-title">Related contents</h2>
     <div class="related-contents">
         <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/golang-%E9%9A%8F%E7%AC%94/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">golang 随笔</h2>
+        </div>
+    </a>
+</article>
             
                 
 <article class="has-image">
