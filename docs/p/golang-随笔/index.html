@@ -1,26 +1,20 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='干呕法 感受嗓子最深处肌肉的一开一合. 初学者在前期会感受到肌肉在跳动
-这个感觉才是伪音的核心.
-特别鸣谢 感谢B站up主柳九对我伪音的启发.
-https://www.bilibili.com/video/BV1Dm4y1D7DC?share_source=copy_web'><title>伪音心得</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='golang 随笔 多级指针与图描述的映射-理清指针的终极解决方案  直观的图描述  一个变量对应一个节点 指针变量与被指向变量之间用一条线连接    指针操作与图的映射  左侧指针,右侧取地址&amp;amp; 左侧变量的节点指向&amp;amp;符后的变量节点, 实例见图: c = &amp;amp;a 左侧指针,右侧指针= 左侧变量节点指向右侧变量节点指向的节点, 例: e = d 指针取内容* 指针变量取地址的表达式等价于它所指向的节点, 例: *d == c    注意事项  关注变量类型 节点只能修改后继节点的值而无法修改兄弟节点的指向 golang中的接口可理解为     如果你能熟练运用3条操作,恭喜你解锁了多层指针的黑魔法. 从此, 程序猿之间的隔阂将被打破(物理级), 所以, 奔涌吧, 多层指针!
+ '><title>golang 随笔</title>
 
-<link rel='canonical' href='https://bruce2233.github.io/p/%E4%BC%AA%E9%9F%B3%E5%BF%83%E5%BE%97/'>
+<link rel='canonical' href='https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94/'>
 
-<link rel="stylesheet" href="/scss/style.min.e3d0fe9be7461dd8621b5ea39db4b6e1051d8954a351866e85e82516c3d14b92.css"><meta property='og:title' content='伪音心得'>
-<meta property='og:description' content='干呕法 感受嗓子最深处肌肉的一开一合. 初学者在前期会感受到肌肉在跳动
-这个感觉才是伪音的核心.
-特别鸣谢 感谢B站up主柳九对我伪音的启发.
-https://www.bilibili.com/video/BV1Dm4y1D7DC?share_source=copy_web'>
-<meta property='og:url' content='https://bruce2233.github.io/p/%E4%BC%AA%E9%9F%B3%E5%BF%83%E5%BE%97/'>
+<link rel="stylesheet" href="/scss/style.min.e3d0fe9be7461dd8621b5ea39db4b6e1051d8954a351866e85e82516c3d14b92.css"><meta property='og:title' content='golang 随笔'>
+<meta property='og:description' content='golang 随笔 多级指针与图描述的映射-理清指针的终极解决方案  直观的图描述  一个变量对应一个节点 指针变量与被指向变量之间用一条线连接    指针操作与图的映射  左侧指针,右侧取地址&amp;amp; 左侧变量的节点指向&amp;amp;符后的变量节点, 实例见图: c = &amp;amp;a 左侧指针,右侧指针= 左侧变量节点指向右侧变量节点指向的节点, 例: e = d 指针取内容* 指针变量取地址的表达式等价于它所指向的节点, 例: *d == c    注意事项  关注变量类型 节点只能修改后继节点的值而无法修改兄弟节点的指向 golang中的接口可理解为     如果你能熟练运用3条操作,恭喜你解锁了多层指针的黑魔法. 从此, 程序猿之间的隔阂将被打破(物理级), 所以, 奔涌吧, 多层指针!
+ '>
+<meta property='og:url' content='https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94/'>
 <meta property='og:site_name' content='Bruce 2233'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2022-07-04T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2022-07-04T00:00:00&#43;00:00'/>
-<meta name="twitter:title" content="伪音心得">
-<meta name="twitter:description" content="干呕法 感受嗓子最深处肌肉的一开一合. 初学者在前期会感受到肌肉在跳动
-这个感觉才是伪音的核心.
-特别鸣谢 感谢B站up主柳九对我伪音的启发.
-https://www.bilibili.com/video/BV1Dm4y1D7DC?share_source=copy_web">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2022-07-29T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2022-07-29T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="golang 随笔">
+<meta name="twitter:description" content="golang 随笔 多级指针与图描述的映射-理清指针的终极解决方案  直观的图描述  一个变量对应一个节点 指针变量与被指向变量之间用一条线连接    指针操作与图的映射  左侧指针,右侧取地址&amp;amp; 左侧变量的节点指向&amp;amp;符后的变量节点, 实例见图: c = &amp;amp;a 左侧指针,右侧指针= 左侧变量节点指向右侧变量节点指向的节点, 例: e = d 指针取内容* 指针变量取地址的表达式等价于它所指向的节点, 例: *d == c    注意事项  关注变量类型 节点只能修改后继节点的值而无法修改兄弟节点的指向 golang中的接口可理解为     如果你能熟练运用3条操作,恭喜你解锁了多层指针的黑魔法. 从此, 程序猿之间的隔阂将被打破(物理级), 所以, 奔涌吧, 多层指针!
+ ">
     <link rel="shortcut icon" href="https://s3.bmp.ovh/imgs/2022/03/1a249f187078d5d4.jpg" />
 
     </head>
@@ -300,8 +294,12 @@ https://www.bilibili.com/video/BV1Dm4y1D7DC?share_source=copy_web">
     
     <header class="article-category">
         
-            <a href="/categories/%E5%A8%B1%E4%B9%90/" >
-                娱乐
+            <a href="/categories/go/" >
+                Go
+            </a>
+        
+            <a href="/categories/%E7%A8%8B%E5%BA%8F/" >
+                程序
             </a>
         
     </header>
@@ -309,7 +307,7 @@ https://www.bilibili.com/video/BV1Dm4y1D7DC?share_source=copy_web">
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/%E4%BC%AA%E9%9F%B3%E5%BF%83%E5%BE%97/">伪音心得</a>
+            <a href="/p/golang-%E9%9A%8F%E7%AC%94/">golang 随笔</a>
         </h2>
     
         
@@ -328,7 +326,7 @@ https://www.bilibili.com/video/BV1Dm4y1D7DC?share_source=copy_web">
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Jul 04, 2022</time>
+                <time class="article-time--published">Jul 29, 2022</time>
             </div>
         
 
@@ -357,13 +355,57 @@ https://www.bilibili.com/video/BV1Dm4y1D7DC?share_source=copy_web">
     <section class="article-content">
     
     
-    <h2 id="干呕法">干呕法</h2>
-<p>感受嗓子最深处肌肉的一开一合. 初学者在前期会感受到肌肉在跳动</p>
-<p>这个感觉才是伪音的核心.</p>
-<h2 id="特别鸣谢">特别鸣谢</h2>
-<p>感谢B站up主柳九对我伪音的启发.</p>
-<p><a class="link" href="https://www.bilibili.com/video/BV1Dm4y1D7DC?share_source=copy_web"  target="_blank" rel="noopener"
-    >https://www.bilibili.com/video/BV1Dm4y1D7DC?share_source=copy_web</a></p>
+    <h1 id="golang-随笔">golang 随笔</h1>
+<h2 id="多级指针与图描述的映射-理清指针的终极解决方案">多级指针与图描述的映射-理清指针的终极解决方案</h2>
+<ol>
+<li>直观的图描述
+<ul>
+<li>一个变量对应一个节点</li>
+<li>指针变量与被指向变量之间用一条线连接
+<img src="/p/golang-%E9%9A%8F%E7%AC%94/pointer1.jpg"
+	width="1840"
+	height="1717"
+	srcset="/p/golang-%E9%9A%8F%E7%AC%94/pointer1_hu07d8f38f6d3cd28c675821f9d7aec641_269521_480x0_resize_q75_box.jpg 480w, /p/golang-%E9%9A%8F%E7%AC%94/pointer1_hu07d8f38f6d3cd28c675821f9d7aec641_269521_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="107"
+		data-flex-basis="257px"
+	
+></li>
+</ul>
+</li>
+<li>指针操作与图的映射
+<ul>
+<li>左侧指针,右侧取地址<code>&amp;</code> 左侧变量的节点指向&amp;符后的变量节点, 实例见图: <code>c = &amp;a</code></li>
+<li>左侧指针,右侧指针<code>=</code> 左侧变量节点指向右侧变量节点指向的节点, 例: <code>e = d</code></li>
+<li>指针取内容<code>*</code> 指针变量取地址的表达式等价于它所指向的节点, 例: <code>*d == c</code>
+<img src="/p/golang-%E9%9A%8F%E7%AC%94/pointer2.jpg"
+	width="2249"
+	height="1717"
+	srcset="/p/golang-%E9%9A%8F%E7%AC%94/pointer2_hu2400c2f9ef7df9fb69513a09dd0ce584_290359_480x0_resize_q75_box.jpg 480w, /p/golang-%E9%9A%8F%E7%AC%94/pointer2_hu2400c2f9ef7df9fb69513a09dd0ce584_290359_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="130"
+		data-flex-basis="314px"
+	
+></li>
+</ul>
+</li>
+<li>注意事项
+<ul>
+<li>关注变量类型</li>
+<li>节点只能修改后继节点的值而无法修改兄弟节点的指向</li>
+<li>golang中的接口可理解为</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>如果你能熟练运用3条操作,恭喜你解锁了多层指针的黑魔法. 从此, 程序猿之间的隔阂将被打破(物理级), 所以, 奔涌吧, 多层指针!</p>
+</blockquote>
 
 </section>
 
@@ -392,6 +434,38 @@ https://www.bilibili.com/video/BV1Dm4y1D7DC?share_source=copy_web">
     
 
     
+
+<aside class="related-contents--wrapper">
+    <h2 class="section-title">Related contents</h2>
+    <div class="related-contents">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E7%A5%9E%E5%99%A8%E4%B9%8Bgo-test/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E7%A5%9E%E5%99%A8%E4%B9%8Bgo-test/goimg.82ecc20d415d5ef060f6b058db4669b0_hu459e9ca2f346f870c3b7f9e9c143646b_24574_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 单元测试神器之go test"
+                        
+                        data-hash="md5-guzCDUFdXvBg9rBY20ZpsA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">单元测试神器之go test</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
 
      
     
@@ -515,8 +589,7 @@ https://www.bilibili.com/video/BV1Dm4y1D7DC?share_source=copy_web">
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#干呕法">干呕法</a></li>
-    <li><a href="#特别鸣谢">特别鸣谢</a></li>
+    <li><a href="#多级指针与图描述的映射-理清指针的终极解决方案">多级指针与图描述的映射-理清指针的终极解决方案</a></li>
   </ol>
 </nav>
         </div>

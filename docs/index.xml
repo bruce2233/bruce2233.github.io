@@ -6,7 +6,125 @@
         <description>Recent content on Bruce 2233</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Sat, 09 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://bruce2233.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 29 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://bruce2233.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>golang 随笔</title>
+        <link>https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94/</link>
+        <pubDate>Fri, 29 Jul 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94/</guid>
+        <description>&lt;h1 id=&#34;golang-随笔&#34;&gt;golang 随笔&lt;/h1&gt;
+&lt;h2 id=&#34;多级指针与图描述的映射-理清指针的终极解决方案&#34;&gt;多级指针与图描述的映射-理清指针的终极解决方案&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;直观的图描述
+&lt;ul&gt;
+&lt;li&gt;一个变量对应一个节点&lt;/li&gt;
+&lt;li&gt;指针变量与被指向变量之间用一条线连接
+&lt;img src=&#34;https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94/pointer1.jpg&#34;
+	width=&#34;1840&#34;
+	height=&#34;1717&#34;
+	srcset=&#34;https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94/pointer1_hu07d8f38f6d3cd28c675821f9d7aec641_269521_480x0_resize_q75_box.jpg 480w, https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94/pointer1_hu07d8f38f6d3cd28c675821f9d7aec641_269521_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;107&#34;
+		data-flex-basis=&#34;257px&#34;
+	
+&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;指针操作与图的映射
+&lt;ul&gt;
+&lt;li&gt;左侧指针,右侧取地址&lt;code&gt;&amp;amp;&lt;/code&gt; 左侧变量的节点指向&amp;amp;符后的变量节点, 实例见图: &lt;code&gt;c = &amp;amp;a&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;左侧指针,右侧指针&lt;code&gt;=&lt;/code&gt; 左侧变量节点指向右侧变量节点指向的节点, 例: &lt;code&gt;e = d&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;指针取内容&lt;code&gt;*&lt;/code&gt; 指针变量取地址的表达式等价于它所指向的节点, 例: &lt;code&gt;*d == c&lt;/code&gt;
+&lt;img src=&#34;https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94/pointer2.jpg&#34;
+	width=&#34;2249&#34;
+	height=&#34;1717&#34;
+	srcset=&#34;https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94/pointer2_hu2400c2f9ef7df9fb69513a09dd0ce584_290359_480x0_resize_q75_box.jpg 480w, https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94/pointer2_hu2400c2f9ef7df9fb69513a09dd0ce584_290359_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;130&#34;
+		data-flex-basis=&#34;314px&#34;
+	
+&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;注意事项
+&lt;ul&gt;
+&lt;li&gt;关注变量类型&lt;/li&gt;
+&lt;li&gt;节点只能修改后继节点的值而无法修改兄弟节点的指向&lt;/li&gt;
+&lt;li&gt;golang中的接口可理解为&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果你能熟练运用3条操作,恭喜你解锁了多层指针的黑魔法. 从此, 程序猿之间的隔阂将被打破(物理级), 所以, 奔涌吧, 多层指针!&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        </item>
+        <item>
+        <title>单元测试神器之go test</title>
+        <link>https://bruce2233.github.io/p/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E7%A5%9E%E5%99%A8%E4%B9%8Bgo-test/</link>
+        <pubDate>Wed, 27 Jul 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://bruce2233.github.io/p/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E7%A5%9E%E5%99%A8%E4%B9%8Bgo-test/</guid>
+        <description>&lt;img src="https://bruce2233.github.io/p/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E7%A5%9E%E5%99%A8%E4%B9%8Bgo-test/goimg.jpg" alt="Featured image of post 单元测试神器之go test" /&gt;&lt;p&gt;​                                                            &lt;a class=&#34;link&#34; href=&#34;https://studygolang.com/pkgdoc&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;img src=&#34;https://img.shields.io/badge/testing-api-brightgreen?style=flat&amp;amp;logo=go&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;go-test&#34;
+	
+	
+&gt;&lt;/a&gt;                &lt;a class=&#34;link&#34; href=&#34;https://github.com/golang/go/tree/master/src/testing&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;img src=&#34;https://img.shields.io/badge/go-testing-brightgreen?style=flat&amp;amp;logo=github&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;go-test&#34;
+	
+	
+&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;go test&lt;/code&gt; 是 Go 标准库中的&lt;code&gt;单元测试&lt;/code&gt;与性能测试系统,也是 go 的&lt;code&gt;子命令&lt;/code&gt;之一&lt;/p&gt;
+&lt;h2 id=&#34;go-test-命令及常用参数&#34;&gt;go test 命令及常用参数&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;go test [文件名] [-run 函数名]&lt;/code&gt;执行工作目录下&lt;code&gt;[文件名]&lt;/code&gt;内&lt;code&gt;函数名&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;测试文件名&lt;strong&gt;必须&lt;/strong&gt; 以&lt;code&gt;_test.go&lt;/code&gt;结尾&lt;/li&gt;
+&lt;li&gt;测试函数名&lt;strong&gt;必须&lt;/strong&gt;以&lt;code&gt;Test&lt;/code&gt;开头&lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt; 参数类型必须为 &lt;code&gt;*tesing.T&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;若测试代码引用包内其他&lt;code&gt;.go&lt;/code&gt;文件，&lt;strong&gt;必须&lt;/strong&gt; 在命令中添加&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;[文件名] == nil&lt;/code&gt; &lt;img src=&#34;https://latex.codecogs.com/svg.image?%5cinline&amp;amp;space;%5clarge&amp;amp;space;%5cLeftrightarrow&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;工作目录下所有文件&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-run 函数名 == nil&lt;/code&gt; &lt;img src=&#34;https://latex.codecogs.com/svg.image?%5cinline&amp;amp;space;%5clarge&amp;amp;space;%5cLeftrightarrow&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;工作目录下所有文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;-v&lt;/code&gt; 输出详细测试信息&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;-bench&lt;/code&gt;基准测试参数，待更新&amp;hellip;&amp;hellip;!&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;排坑!
+&lt;code&gt;-count=1&lt;/code&gt; 不使用go test 缓存. 缓存模式下如代码不变则直接打印输出上次测试的结果, 不会真正执行&lt;code&gt;TestXXX&lt;/code&gt;函数.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        </item>
+        <item>
         <title>windows-git-ssh-proxy</title>
         <link>https://bruce2233.github.io/p/windows-git-ssh-proxy/</link>
         <pubDate>Sat, 09 Jul 2022 00:00:00 +0000</pubDate>
@@ -32,21 +150,6 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
-        </item>
-        <item>
-        <title>伪音心得</title>
-        <link>https://bruce2233.github.io/p/%E4%BC%AA%E9%9F%B3%E5%BF%83%E5%BE%97/</link>
-        <pubDate>Mon, 04 Jul 2022 00:00:00 +0000</pubDate>
-        
-        <guid>https://bruce2233.github.io/p/%E4%BC%AA%E9%9F%B3%E5%BF%83%E5%BE%97/</guid>
-        <description>&lt;h2 id=&#34;干呕法&#34;&gt;干呕法&lt;/h2&gt;
-&lt;p&gt;感受嗓子最深处肌肉的一开一合. 初学者在前期会感受到肌肉在跳动&lt;/p&gt;
-&lt;p&gt;这个感觉才是伪音的核心.&lt;/p&gt;
-&lt;h2 id=&#34;特别鸣谢&#34;&gt;特别鸣谢&lt;/h2&gt;
-&lt;p&gt;感谢B站up主柳九对我伪音的启发.&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1Dm4y1D7DC?share_source=copy_web&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://www.bilibili.com/video/BV1Dm4y1D7DC?share_source=copy_web&lt;/a&gt;&lt;/p&gt;
-</description>
         </item>
         <item>
         <title>非暴力不合作</title>
@@ -75,6 +178,13 @@
 &lt;p&gt;民主集中制的本质是政治权力的委托&lt;/p&gt;
 &lt;h2 id=&#34;途径&#34;&gt;途径&lt;/h2&gt;
 &lt;p&gt;区块链提供了交易的自动化&lt;/p&gt;
+&lt;h2 id=&#34;erc20-air-coin&#34;&gt;ERC20-Air Coin&lt;/h2&gt;
+&lt;p&gt;&amp;ldquo;I can&amp;rsquo;t breath, I need AIR&amp;rdquo;
+众所周知，空气币最大的特点是流动性差
+所以xx有存款的抓紧提现吧，兑换成我的AirCoin(⟑)
+最起码我能保证持有者(jiucai)归零后不用挨揍
+这就是tx为我们探索的AI识图和语义识别应用场景吗
+pyq第三次测试&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -873,61 +983,6 @@ $$&lt;/li&gt;
 </description>
         </item>
         <item>
-        <title>单元测试神器之go test</title>
-        <link>https://bruce2233.github.io/p/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E7%A5%9E%E5%99%A8%E4%B9%8Bgo-test/</link>
-        <pubDate>Tue, 08 Mar 2022 00:00:00 +0000</pubDate>
-        
-        <guid>https://bruce2233.github.io/p/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E7%A5%9E%E5%99%A8%E4%B9%8Bgo-test/</guid>
-        <description>&lt;img src="https://bruce2233.github.io/p/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E7%A5%9E%E5%99%A8%E4%B9%8Bgo-test/goimg.jpg" alt="Featured image of post 单元测试神器之go test" /&gt;&lt;p&gt;​                                                            &lt;a class=&#34;link&#34; href=&#34;https://studygolang.com/pkgdoc&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;&lt;img src=&#34;https://img.shields.io/badge/testing-api-brightgreen?style=flat&amp;amp;logo=go&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;go-test&#34;
-	
-	
-&gt;&lt;/a&gt;                &lt;a class=&#34;link&#34; href=&#34;https://github.com/golang/go/tree/master/src/testing&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;&lt;img src=&#34;https://img.shields.io/badge/go-testing-brightgreen?style=flat&amp;amp;logo=github&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;go-test&#34;
-	
-	
-&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;go test&lt;/code&gt; 是 Go 标准库中的&lt;code&gt;单元测试&lt;/code&gt;与性能测试系统,也是 go 的&lt;code&gt;子命令&lt;/code&gt;之一&lt;/p&gt;
-&lt;h2 id=&#34;go-test-命令及常用参数&#34;&gt;go test 命令及常用参数&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;go test [文件名] [-run 函数名]&lt;/code&gt;执行工作目录下&lt;code&gt;[文件名]&lt;/code&gt;内&lt;code&gt;函数名&lt;/code&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;测试文件名&lt;strong&gt;必须&lt;/strong&gt; 以&lt;code&gt;_test.go&lt;/code&gt;结尾&lt;/li&gt;
-&lt;li&gt;测试函数名&lt;strong&gt;必须&lt;/strong&gt;以&lt;code&gt;Test&lt;/code&gt;开头&lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt; 参数类型必须为 &lt;code&gt;*tesing.T&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;若测试代码引用包内其他&lt;code&gt;.go&lt;/code&gt;文件，&lt;strong&gt;必须&lt;/strong&gt; 在命令中添加&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;[文件名] == nil&lt;/code&gt; &lt;img src=&#34;https://latex.codecogs.com/svg.image?%5cinline&amp;amp;space;%5clarge&amp;amp;space;%5cLeftrightarrow&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;工作目录下所有文件&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;-run 函数名 == nil&lt;/code&gt; &lt;img src=&#34;https://latex.codecogs.com/svg.image?%5cinline&amp;amp;space;%5clarge&amp;amp;space;%5cLeftrightarrow&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;工作目录下所有文件&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;code&gt;-v&lt;/code&gt; 输出详细测试信息&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;-bench&lt;/code&gt;基准测试参数，待更新&amp;hellip;&amp;hellip;!&lt;/p&gt;
-</description>
-        </item>
-        <item>
         <title>盘古再再再开天</title>
         <link>https://bruce2233.github.io/p/%E7%9B%98%E5%8F%A4%E5%86%8D%E5%86%8D%E5%86%8D%E5%BC%80%E5%A4%A9/</link>
         <pubDate>Sun, 06 Mar 2022 18:21:32 +0800</pubDate>
@@ -1201,6 +1256,7 @@ CS:IP, SS:SP对程序的输出是信息完备的
 &lt;p&gt;人总是担心自己的工作是低效的
 所以总是想改善环境
 有的人甚至改善环境的工作量超过了工作本身. 这是买椟还珠的行为&lt;/p&gt;
+&lt;h2 id=&#34;解决现实问题&#34;&gt;解决现实问题&lt;/h2&gt;
 </description>
         </item>
         <item>
