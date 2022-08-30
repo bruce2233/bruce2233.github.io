@@ -2,15 +2,16 @@
 
 ## 插件
 
-vscode.Vim
-yzhang.markdown-all-in-one
+- vscode.Vim
+- yzhang.markdown-all-in-one
+- monokai.theme-monokai-pro-vscode
 
 ## 全键盘-命令&快捷键
 
 ### Command
 
 ```shell
-code --install-extension <extension-Identifier>
+code --install-extension <extension-identifier>
 code <file>|<dir>
 ```
 
@@ -40,7 +41,7 @@ code <file>|<dir>
     "[markdown]": {
         "editor.defaultFormatter": "yzhang.markdown-all-in-one"
     }
-
+    "workbench.colorTheme": "Monokai Pro"
 ```
 
 ```json
