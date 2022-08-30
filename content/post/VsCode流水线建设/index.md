@@ -1,3 +1,13 @@
+---
+title: VSCode全键盘方案
+date: 2022-08-30
+author: 岛石  
+categories: 
+- "程序"
+tag: 
+- "VSCode"
+- "环境"
+---
 # VsCode 流水线建设
 
 ## 插件
@@ -17,13 +27,13 @@ code <file>|<dir>
 
 ### VsCode Default Shortcut
 
-|                 |              |
-| --------------- | ------------ |
-| File Explorer   | ctrl+shift+e |
-| Extension       | ctrl+shift+x |
-| Excute Commands | ctrl+shift+p |
-| Command Palette | ctrl+p       |
-| Document Format | alt+shift+f  |
+|                      |              |
+| -------------------- | ------------ |
+| File Explorer        | ctrl+shift+e |
+| Extension            | ctrl+shift+x |
+| Excute Commands      | ctrl+shift+p |
+| Command Palette      | ctrl+p       |
+| Document Format      | alt+shift+f  |
 | Focus search results | F4/shift+F4  |
 
 ### Custome Config
@@ -38,10 +48,10 @@ code <file>|<dir>
             "before" :["j","j"],
             "after":["<ESC>"]
         }
-    ]
+    ],
     "[markdown]": {
         "editor.defaultFormatter": "yzhang.markdown-all-in-one"
-    }
+    },
     "workbench.colorTheme": "Monokai Pro"
 ```
 

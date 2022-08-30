@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://bruce2233.github.io/</loc>
-    <lastmod>2022-07-29T00:00:00+00:00</lastmod>
+    <lastmod>2022-08-04T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="cn"
@@ -16,7 +16,7 @@
                 />
   </url><url>
     <loc>https://bruce2233.github.io/categories/</loc>
-    <lastmod>2022-07-29T00:00:00+00:00</lastmod>
+    <lastmod>2022-08-04T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="cn"
@@ -29,15 +29,18 @@
                 />
   </url><url>
     <loc>https://bruce2233.github.io/categories/go/</loc>
-    <lastmod>2022-07-29T00:00:00+00:00</lastmod>
+    <lastmod>2022-08-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94/</loc>
-    <lastmod>2022-07-29T00:00:00+00:00</lastmod>
+    <lastmod>2022-08-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://bruce2233.github.io/post/</loc>
-    <lastmod>2022-07-29T00:00:00+00:00</lastmod>
+    <lastmod>2022-08-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://bruce2233.github.io/categories/%E7%A8%8B%E5%BA%8F/</loc>
+    <lastmod>2022-08-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94/</loc>
     <lastmod>2022-07-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://bruce2233.github.io/tags/</loc>
@@ -187,6 +190,14 @@
     <loc>https://bruce2233.github.io/</loc>
   </url><url>
     <loc>https://bruce2233.github.io/</loc>
+  </url><url>
+    <loc>https://bruce2233.github.io/p/</loc>
+  </url><url>
+    <loc>https://bruce2233.github.io/p/</loc>
+  </url><url>
+    <loc>https://bruce2233.github.io/p/</loc>
+  </url><url>
+    <loc>https://bruce2233.github.io/p/</loc>
   </url><url>
     <loc>https://bruce2233.github.io/p/</loc>
   </url><url>
