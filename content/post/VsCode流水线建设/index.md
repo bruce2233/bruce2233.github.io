@@ -24,6 +24,7 @@ code <file>|<dir>
 | Excute Commands | ctrl+shift+p |
 | Command Palette | ctrl+p       |
 | Document Format | alt+shift+f  |
+| Focus search results | F4/shift+F4  |
 
 ### Custome Config
 
