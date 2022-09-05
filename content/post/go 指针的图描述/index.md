@@ -1,12 +1,13 @@
 ---
 title: golang 随笔
-date: 2022-07-29
+date: 2022-09-05
 author: 岛石  
 categories: 
 - "Go"
 - "程序"
 tag: 
 - "指针"
+- "坑"
 ---
 
 # golang 指针
@@ -29,3 +30,34 @@ tag:
    - golang中的接口可理解为
 
 > 如果你能熟练运用3条操作,恭喜你解锁了多层指针的黑魔法. 从此, 程序猿之间的隔阂将被打破(物理级), 所以, 奔涌吧, 多层指针!
+
+# 常见的坑
+
+1. 切片作形参
+
+众所周知, 切片作为一种引用类型, 在作为形参传递后修改切片的值会修改原切片数据的. 那么请思考以下的程序, 请预测输出的结果.
+
+```go
+func main(){
+    arr := make([]int, 0)
+    foo(arr)
+    //输出是什么?
+    println(arr)
+}
+
+func foo(arr []int){
+    arr = append(arr, 1)
+}
+```
+
+下面公布答案: `[]`, 长度仍然为0, 为什么会这样呢? 不是说好可以修改数据吗.
+答案藏在slice 底层的结构:
+```Go
+type slice struct {
+    array unsafe.Pointer
+    len   int
+    cap   int
+}
+```
+slice传引用针对的是 指向的仅仅是线性表的数据, 而线性表本身的属性(len, cap)仍然是传值, 
+所以append对len, cap的修改不会影响原slice. 你答对了吗? ヽ(ー_ー)ノ
