@@ -6,46 +6,31 @@
         <description>Recent content in Go on Bruce 2233</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Thu, 04 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://bruce2233.github.io/categories/go/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>golang 随笔</title>
-        <link>https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94/</link>
-        <pubDate>Thu, 04 Aug 2022 00:00:00 +0000</pubDate>
+        <lastBuildDate>Thu, 02 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://bruce2233.github.io/categories/go/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>golang 随笔(持续更新中...)</title>
+        <link>https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD.../</link>
+        <pubDate>Thu, 02 Feb 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94/</guid>
-        <description>&lt;h1 id=&#34;evnet---an-event-driven-networking-framework-forked-from-gnet&#34;&gt;evnet - An event-driven networking framework forked from gnet&lt;/h1&gt;
-&lt;h2 id=&#34;事件-线程协程调用链&#34;&gt;事件-线程/协程调用链&lt;/h2&gt;
-&lt;h2 id=&#34;evnet性能强于net原生库的原理&#34;&gt;evnet性能强于net原生库的原理&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;从net包goroutine-per-connection同步模式编程&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;注意点&#34;&gt;注意点&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;对系统资源的释放.Fd, buffer.&lt;/li&gt;
-&lt;li&gt;粘包/拆包&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;启发&#34;&gt;启发&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;围绕交付物的核心&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        </item>
-        <item>
-        <title>golang 随笔</title>
-        <link>https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94/</link>
-        <pubDate>Fri, 29 Jul 2022 00:00:00 +0000</pubDate>
-        
-        <guid>https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94/</guid>
-        <description>&lt;h1 id=&#34;golang-指针&#34;&gt;golang 指针&lt;/h1&gt;
-&lt;h2 id=&#34;多级指针与图描述的映射-理清指针的终极解决方案&#34;&gt;多级指针与图描述的映射-理清指针的终极解决方案&lt;/h2&gt;
+        <guid>https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD.../</guid>
+        <description>&lt;h2 id=&#34;golang泛型设计&#34;&gt;Golang泛型设计&lt;/h2&gt;
+&lt;p&gt;为什么结构体/泛型不能定义泛型方法?&lt;/p&gt;
+&lt;p&gt;Golang中泛型函数(&lt;code&gt;function&lt;/code&gt;)的定义仅限于函数, 而不能是结构体/结构的方法(&lt;code&gt;method&lt;/code&gt;).
+从语言的使用角度来看, 这样的需求是显然的, 但是任何特性都是有代价的. 结构体的泛型方法必然需要结构体的实例化, 如果想JIT一样在runtime进行, 将会造成一定的性能损失. 所以&lt;code&gt;Golang&lt;/code&gt;选择不实现, 而是希望能在用户层通过 function的办法替换.从这点来讲, Golang并没有把饭嚼碎喂到嘴边.&lt;/p&gt;
+&lt;p&gt;参考链接:&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://go.googlesource.com/proposal/&amp;#43;/refs/heads/master/design/3651-type-parameters.md#no-parameterized-methods&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Type Parameters Proposal&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/golang/go/issues/49085&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;proposal: spec: allow type parameters in methods #49085&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;多级指针与图描述的映射-理清指针的终极解决方案-golang-泛型设计&#34;&gt;多级指针与图描述的映射-理清指针的终极解决方案## golang 泛型设计&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;直观的图描述
 &lt;ul&gt;
 &lt;li&gt;一个变量对应一个节点&lt;/li&gt;
 &lt;li&gt;指针变量与被指向变量之间用一条线连接
-&lt;img src=&#34;https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94/pointer1.jpg&#34;
+&lt;img src=&#34;https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD.../pointer1.jpg&#34;
 	width=&#34;1840&#34;
 	height=&#34;1717&#34;
-	srcset=&#34;https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94/pointer1_hu07d8f38f6d3cd28c675821f9d7aec641_269521_480x0_resize_q75_box.jpg 480w, https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94/pointer1_hu07d8f38f6d3cd28c675821f9d7aec641_269521_1024x0_resize_q75_box.jpg 1024w&#34;
+	srcset=&#34;https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD.../pointer1_hu07d8f38f6d3cd28c675821f9d7aec641_269521_480x0_resize_q75_box.jpg 480w, https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD.../pointer1_hu07d8f38f6d3cd28c675821f9d7aec641_269521_1024x0_resize_q75_box.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -66,10 +51,10 @@
 &lt;li&gt;空指针
 &lt;ul&gt;
 &lt;li&gt;指针变量在初始化后不能使用*, 必须赋值后才可使用, 此时a == nil 为真.
-&lt;img src=&#34;https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94/pointer2.jpg&#34;
+&lt;img src=&#34;https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD.../pointer2.jpg&#34;
 	width=&#34;2249&#34;
 	height=&#34;1717&#34;
-	srcset=&#34;https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94/pointer2_hu2400c2f9ef7df9fb69513a09dd0ce584_290359_480x0_resize_q75_box.jpg 480w, https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94/pointer2_hu2400c2f9ef7df9fb69513a09dd0ce584_290359_1024x0_resize_q75_box.jpg 1024w&#34;
+	srcset=&#34;https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD.../pointer2_hu2400c2f9ef7df9fb69513a09dd0ce584_290359_480x0_resize_q75_box.jpg 480w, https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD.../pointer2_hu2400c2f9ef7df9fb69513a09dd0ce584_290359_1024x0_resize_q75_box.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -91,6 +76,80 @@
 &lt;blockquote&gt;
 &lt;p&gt;如果你能熟练运用3条操作,恭喜你解锁了多层指针的黑魔法. 从此, 程序猿之间的隔阂将被打破(物理级), 所以, 奔涌吧, 多层指针!&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;h1 id=&#34;常见的坑&#34;&gt;常见的坑&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;切片作形参&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;众所周知, 切片作为一种引用类型, 在作为形参传递后修改切片的值会修改原切片数据的. 那么请思考以下的程序, 请预测输出的结果.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nx&#34;&gt;arr&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;make&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;([]&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nf&#34;&gt;foo&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;arr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;//输出是什么?
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;arr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;foo&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;arr&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[]&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nx&#34;&gt;arr&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;append&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;arr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;下面公布答案: &lt;code&gt;[]&lt;/code&gt;, 长度仍然为0, 为什么会这样呢? 不是说好可以修改数据吗.
+答案藏在slice 底层的结构:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Go&#34; data-lang=&#34;Go&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;slice&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nx&#34;&gt;array&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;unsafe&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Pointer&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nx&#34;&gt;len&lt;/span&gt;   &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nx&#34;&gt;cap&lt;/span&gt;   &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;slice传引用针对的是 指向的仅仅是线性表的数据, 而线性表本身的属性(len, cap)仍然是传值,
+所以append对len, cap的修改不会影响原slice. 你答对了吗? ヽ(ー_ー)ノ&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>golang 随笔</title>
+        <link>https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94/</link>
+        <pubDate>Thu, 04 Aug 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94/</guid>
+        <description>&lt;h1 id=&#34;evnet---an-event-driven-networking-framework-forked-from-gnet&#34;&gt;evnet - An event-driven networking framework forked from gnet&lt;/h1&gt;
+&lt;h2 id=&#34;事件-线程协程调用链&#34;&gt;事件-线程/协程调用链&lt;/h2&gt;
+&lt;h2 id=&#34;evnet性能强于net原生库的原理&#34;&gt;evnet性能强于net原生库的原理&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;从net包goroutine-per-connection同步模式编程&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;注意点&#34;&gt;注意点&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;对系统资源的释放.Fd, buffer.&lt;/li&gt;
+&lt;li&gt;粘包/拆包&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;启发&#34;&gt;启发&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;围绕交付物的核心&lt;/li&gt;
+&lt;/ol&gt;
 </description>
         </item>
         <item>

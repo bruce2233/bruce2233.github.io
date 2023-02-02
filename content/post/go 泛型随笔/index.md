@@ -1,18 +1,30 @@
 ---
-title: golang 随笔
-date: 2022-09-05
+title: golang 随笔(持续更新中...)
+date: 2023-02-02
 author: 岛石  
 categories: 
 - "Go"
 - "程序"
 tag: 
 - "指针"
-- "坑"
+- "泛型"
+- "设计原理"
 ---
 
-# golang 指针
+## Golang泛型设计
 
-## 多级指针与图描述的映射-理清指针的终极解决方案
+为什么结构体/泛型不能定义泛型方法?
+
+Golang中泛型函数(`function`)的定义仅限于函数, 而不能是结构体/结构的方法(`method`).
+从语言的使用角度来看, 这样的需求是显然的, 但是任何特性都是有代价的. 结构体的泛型方法必然需要结构体的实例化, 如果想JIT一样在runtime进行, 将会造成一定的性能损失. 所以`Golang`选择不实现, 而是希望能在用户层通过 function的办法替换.从这点来讲, Golang并没有把饭嚼碎喂到嘴边.
+
+参考链接: 
+
+[Type Parameters Proposal](https://go.googlesource.com/proposal/+/refs/heads/master/design/3651-type-parameters.md#no-parameterized-methods)
+
+[proposal: spec: allow type parameters in methods #49085](https://github.com/golang/go/issues/49085)
+## 多级指针与图描述的映射-理清指针的终极解决方案## golang 泛型设计
+
 1. 直观的图描述
    - 一个变量对应一个节点
    - 指针变量与被指向变量之间用一条线连接

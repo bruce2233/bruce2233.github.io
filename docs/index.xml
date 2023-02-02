@@ -6,7 +6,130 @@
         <description>Recent content on Bruce 2233</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Tue, 30 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://bruce2233.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 02 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://bruce2233.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>golang 随笔(持续更新中...)</title>
+        <link>https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD.../</link>
+        <pubDate>Thu, 02 Feb 2023 00:00:00 +0000</pubDate>
+        
+        <guid>https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD.../</guid>
+        <description>&lt;h2 id=&#34;golang泛型设计&#34;&gt;Golang泛型设计&lt;/h2&gt;
+&lt;p&gt;为什么结构体/泛型不能定义泛型方法?&lt;/p&gt;
+&lt;p&gt;Golang中泛型函数(&lt;code&gt;function&lt;/code&gt;)的定义仅限于函数, 而不能是结构体/结构的方法(&lt;code&gt;method&lt;/code&gt;).
+从语言的使用角度来看, 这样的需求是显然的, 但是任何特性都是有代价的. 结构体的泛型方法必然需要结构体的实例化, 如果想JIT一样在runtime进行, 将会造成一定的性能损失. 所以&lt;code&gt;Golang&lt;/code&gt;选择不实现, 而是希望能在用户层通过 function的办法替换.从这点来讲, Golang并没有把饭嚼碎喂到嘴边.&lt;/p&gt;
+&lt;p&gt;参考链接:&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://go.googlesource.com/proposal/&amp;#43;/refs/heads/master/design/3651-type-parameters.md#no-parameterized-methods&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Type Parameters Proposal&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/golang/go/issues/49085&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;proposal: spec: allow type parameters in methods #49085&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;多级指针与图描述的映射-理清指针的终极解决方案-golang-泛型设计&#34;&gt;多级指针与图描述的映射-理清指针的终极解决方案## golang 泛型设计&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;直观的图描述
+&lt;ul&gt;
+&lt;li&gt;一个变量对应一个节点&lt;/li&gt;
+&lt;li&gt;指针变量与被指向变量之间用一条线连接
+&lt;img src=&#34;https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD.../pointer1.jpg&#34;
+	width=&#34;1840&#34;
+	height=&#34;1717&#34;
+	srcset=&#34;https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD.../pointer1_hu07d8f38f6d3cd28c675821f9d7aec641_269521_480x0_resize_q75_box.jpg 480w, https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD.../pointer1_hu07d8f38f6d3cd28c675821f9d7aec641_269521_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;107&#34;
+		data-flex-basis=&#34;257px&#34;
+	
+&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;指针操作与图的映射
+&lt;ul&gt;
+&lt;li&gt;左侧指针,右侧取地址&lt;code&gt;&amp;amp;&lt;/code&gt; 左侧变量的节点指向&amp;amp;符后的变量节点, 实例见图: &lt;code&gt;c = &amp;amp;a&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;左侧指针,右侧指针&lt;code&gt;=&lt;/code&gt; 左侧变量节点指向右侧变量节点指向的节点, 例: &lt;code&gt;e = d&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;指针取内容&lt;code&gt;*&lt;/code&gt; 指针变量取地址的表达式等价于它所指向的节点, 例: &lt;code&gt;*d == c&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;空指针
+&lt;ul&gt;
+&lt;li&gt;指针变量在初始化后不能使用*, 必须赋值后才可使用, 此时a == nil 为真.
+&lt;img src=&#34;https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD.../pointer2.jpg&#34;
+	width=&#34;2249&#34;
+	height=&#34;1717&#34;
+	srcset=&#34;https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD.../pointer2_hu2400c2f9ef7df9fb69513a09dd0ce584_290359_480x0_resize_q75_box.jpg 480w, https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD.../pointer2_hu2400c2f9ef7df9fb69513a09dd0ce584_290359_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;130&#34;
+		data-flex-basis=&#34;314px&#34;
+	
+&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;注意事项
+&lt;ul&gt;
+&lt;li&gt;关注变量类型&lt;/li&gt;
+&lt;li&gt;节点只能修改后继节点的值而无法修改兄弟节点的指向&lt;/li&gt;
+&lt;li&gt;golang中的接口可理解为&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果你能熟练运用3条操作,恭喜你解锁了多层指针的黑魔法. 从此, 程序猿之间的隔阂将被打破(物理级), 所以, 奔涌吧, 多层指针!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;常见的坑&#34;&gt;常见的坑&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;切片作形参&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;众所周知, 切片作为一种引用类型, 在作为形参传递后修改切片的值会修改原切片数据的. 那么请思考以下的程序, 请预测输出的结果.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nx&#34;&gt;arr&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;make&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;([]&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nf&#34;&gt;foo&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;arr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;//输出是什么?
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;arr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;foo&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;arr&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[]&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nx&#34;&gt;arr&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;append&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;arr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;下面公布答案: &lt;code&gt;[]&lt;/code&gt;, 长度仍然为0, 为什么会这样呢? 不是说好可以修改数据吗.
+答案藏在slice 底层的结构:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Go&#34; data-lang=&#34;Go&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;slice&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nx&#34;&gt;array&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;unsafe&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Pointer&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nx&#34;&gt;len&lt;/span&gt;   &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nx&#34;&gt;cap&lt;/span&gt;   &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;slice传引用针对的是 指向的仅仅是线性表的数据, 而线性表本身的属性(len, cap)仍然是传值,
+所以append对len, cap的修改不会影响原slice. 你答对了吗? ヽ(ー_ー)ノ&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>VSCode全键盘方案</title>
         <link>https://bruce2233.github.io/p/vscode%E5%85%A8%E9%94%AE%E7%9B%98%E6%96%B9%E6%A1%88/</link>
         <pubDate>Tue, 30 Aug 2022 00:00:00 +0000</pubDate>
@@ -150,70 +273,6 @@
 &lt;ol&gt;
 &lt;li&gt;围绕交付物的核心&lt;/li&gt;
 &lt;/ol&gt;
-</description>
-        </item>
-        <item>
-        <title>golang 随笔</title>
-        <link>https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94/</link>
-        <pubDate>Fri, 29 Jul 2022 00:00:00 +0000</pubDate>
-        
-        <guid>https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94/</guid>
-        <description>&lt;h1 id=&#34;golang-指针&#34;&gt;golang 指针&lt;/h1&gt;
-&lt;h2 id=&#34;多级指针与图描述的映射-理清指针的终极解决方案&#34;&gt;多级指针与图描述的映射-理清指针的终极解决方案&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;直观的图描述
-&lt;ul&gt;
-&lt;li&gt;一个变量对应一个节点&lt;/li&gt;
-&lt;li&gt;指针变量与被指向变量之间用一条线连接
-&lt;img src=&#34;https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94/pointer1.jpg&#34;
-	width=&#34;1840&#34;
-	height=&#34;1717&#34;
-	srcset=&#34;https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94/pointer1_hu07d8f38f6d3cd28c675821f9d7aec641_269521_480x0_resize_q75_box.jpg 480w, https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94/pointer1_hu07d8f38f6d3cd28c675821f9d7aec641_269521_1024x0_resize_q75_box.jpg 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;107&#34;
-		data-flex-basis=&#34;257px&#34;
-	
-&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;指针操作与图的映射
-&lt;ul&gt;
-&lt;li&gt;左侧指针,右侧取地址&lt;code&gt;&amp;amp;&lt;/code&gt; 左侧变量的节点指向&amp;amp;符后的变量节点, 实例见图: &lt;code&gt;c = &amp;amp;a&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;左侧指针,右侧指针&lt;code&gt;=&lt;/code&gt; 左侧变量节点指向右侧变量节点指向的节点, 例: &lt;code&gt;e = d&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;指针取内容&lt;code&gt;*&lt;/code&gt; 指针变量取地址的表达式等价于它所指向的节点, 例: &lt;code&gt;*d == c&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;空指针
-&lt;ul&gt;
-&lt;li&gt;指针变量在初始化后不能使用*, 必须赋值后才可使用, 此时a == nil 为真.
-&lt;img src=&#34;https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94/pointer2.jpg&#34;
-	width=&#34;2249&#34;
-	height=&#34;1717&#34;
-	srcset=&#34;https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94/pointer2_hu2400c2f9ef7df9fb69513a09dd0ce584_290359_480x0_resize_q75_box.jpg 480w, https://bruce2233.github.io/p/golang-%E9%9A%8F%E7%AC%94/pointer2_hu2400c2f9ef7df9fb69513a09dd0ce584_290359_1024x0_resize_q75_box.jpg 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;130&#34;
-		data-flex-basis=&#34;314px&#34;
-	
-&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;注意事项
-&lt;ul&gt;
-&lt;li&gt;关注变量类型&lt;/li&gt;
-&lt;li&gt;节点只能修改后继节点的值而无法修改兄弟节点的指向&lt;/li&gt;
-&lt;li&gt;golang中的接口可理解为&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;blockquote&gt;
-&lt;p&gt;如果你能熟练运用3条操作,恭喜你解锁了多层指针的黑魔法. 从此, 程序猿之间的隔阂将被打破(物理级), 所以, 奔涌吧, 多层指针!&lt;/p&gt;
-&lt;/blockquote&gt;
 </description>
         </item>
         <item>
@@ -427,7 +486,7 @@ pyq第三次测试&lt;/p&gt;
 &lt;li&gt;做空要平仓, 如果成功, 肯定会有人抄底, 如果抄底的大多数是散户, 价格基本不会拉升的起来. 如果抄底的是机构可能会反弹.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;交易感思&#34;&gt;交易感思&lt;/h2&gt;
-&lt;p&gt;初次真正接触交易遇到了LUNA, 盲目入场, 既不知己,也不知彼, 交了不少学费. 
+&lt;p&gt;初次真正接触交易遇到了LUNA, 盲目入场, 既不知己,也不知彼, 交了不少学费.
 但也彻底断绝了加入任何庞氏骗局的想法, 算是在正确的价值和投资观上迈出了一小步吧.&lt;/p&gt;
 </description>
         </item>
@@ -1188,7 +1247,7 @@ $$&lt;/li&gt;
 
 &lt;p&gt;Block math:
 $$
-\varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } } 
+\varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } }
 $$&lt;/p&gt;</description>
         </item>
         <item>
@@ -1334,14 +1393,6 @@ SASS will automatically recompile your css when changed.&lt;/li&gt;
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
         <guid>https://bruce2233.github.io/p/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title></title>
-        <link>https://bruce2233.github.io/p/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://bruce2233.github.io/p/</guid>
         <description>&lt;h1 id=&#34;neovim---hyperextensible-vim-based-text-editor&#34;&gt;NeoVim - hyperextensible Vim-based text editor&lt;/h1&gt;
 &lt;h2 id=&#34;path&#34;&gt;Path&lt;/h2&gt;
 &lt;h3 id=&#34;核心环境变量&#34;&gt;核心环境变量&lt;/h3&gt;
@@ -1350,6 +1401,15 @@ SASS will automatically recompile your css when changed.&lt;/li&gt;
 &lt;p&gt;`$XDG_CONFIG_HOME\nvim\init.lua(init.vim)&#39;&lt;/p&gt;
 &lt;h3 id=&#34;插件文件路径&#34;&gt;插件文件路径&lt;/h3&gt;
 &lt;p&gt;&lt;code&gt;$XDG_DATA_HOME\nvim-data\pack\$YourPackName\start\$YourPackFileDir&lt;/code&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title></title>
+        <link>https://bruce2233.github.io/p/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://bruce2233.github.io/p/</guid>
+        <description>&lt;h1 id=&#34;占坑-qemu安装arch-linux&#34;&gt;占坑, QEMU安装Arch Linux&lt;/h1&gt;
 </description>
         </item>
         <item>
@@ -1476,7 +1536,7 @@ SASS will automatically recompile your css when changed.&lt;/li&gt;
 		data-flex-basis=&#34;469px&#34;
 	
 &gt;&lt;/li&gt;
-&lt;li&gt;左键选择&amp;quot;路由&amp;quot;-&amp;ldquo;绕过大陆&amp;rdquo;. 
+&lt;li&gt;左键选择&amp;quot;路由&amp;quot;-&amp;ldquo;绕过大陆&amp;rdquo;.
 &lt;img src=&#34;https://bruce2233.github.io/p/2022-08-11-22-04-40.png&#34;
 	width=&#34;485&#34;
 	height=&#34;255&#34;
@@ -1514,11 +1574,26 @@ SASS will automatically recompile your css when changed.&lt;/li&gt;
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
         <guid>https://bruce2233.github.io/p/</guid>
+        <description>&lt;h1 id=&#34;数据结构&#34;&gt;数据结构&lt;/h1&gt;
+&lt;h2 id=&#34;线性表&#34;&gt;线性表&lt;/h2&gt;
+&lt;p&gt;顺序存储和链式存储的差异(working)&lt;/p&gt;
+&lt;h2 id=&#34;栈&#34;&gt;栈&lt;/h2&gt;
+&lt;h2 id=&#34;栈与递归的关系&#34;&gt;栈与递归的关系&lt;/h2&gt;
+&lt;h2 id=&#34;尾递归与循环的关系&#34;&gt;尾递归与循环的关系&lt;/h2&gt;
+&lt;p&gt;尾递归&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title></title>
+        <link>https://bruce2233.github.io/p/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://bruce2233.github.io/p/</guid>
         <description>&lt;h1 id=&#34;数据结构下的进程与线程&#34;&gt;数据结构下的进程与线程&lt;/h1&gt;
 &lt;p&gt;进程是资源分配的最小单位, 对应一个虚拟内存空间
 线程是CPU调度的最小单位, 对应的是一组CPU寄存器,描述了栈的状态
 CS:IP, SS:SP对程序的输出是信息完备的
-程序本质一套函数调用链.利用内存中的数据结构描述函数的规则, 调用CPU真正执行, 
+程序本质一套函数调用链.利用内存中的数据结构描述函数的规则, 调用CPU真正执行,
 在线程切换时, 保存CPU的寄存器, 因为&lt;/p&gt;
 &lt;h2 id=&#34;go的并发之道&#34;&gt;go的并发之道&lt;/h2&gt;
 &lt;p&gt;go语言并发采用fork-join模型
@@ -1573,9 +1648,9 @@ CS:IP, SS:SP对程序的输出是信息完备的
 &lt;p&gt;能解决的问题都会让人, 集体进步,  不能解决的问题才是真正有害的, 所以绝不能公开化.&lt;/p&gt;
 &lt;p&gt;强者对弱者的剥削是必然. 如果非要消除剥削的话, 那只能消除强者与弱者的差距&lt;/p&gt;
 &lt;p&gt;为何不接纳痛苦? 是因为自身的意志不够坚定吗? 非也.&lt;br&gt;
-这源自对生存环境的深度耦合. 自身的存在早已与环境融为一体. 所谓&amp;quot;人在塔在&amp;quot; 
+这源自对生存环境的深度耦合. 自身的存在早已与环境融为一体. 所谓&amp;quot;人在塔在&amp;quot;
 所以这已经不是痛不痛的问题了, 而是死不死的问题.&lt;/p&gt;
-&lt;p&gt;那么什么样的生产力进步该被鼓励? 答: 自己的 
+&lt;p&gt;那么什么样的生产力进步该被鼓励? 答: 自己的
 什么样的生产力进步应该被打压? 答: 别人的&lt;/p&gt;
 &lt;p&gt;为什么限制生产力? 保证自身寻租的地位&lt;/p&gt;
 &lt;p&gt;为什么创新难? 因为没有公平的市场环境, 就不会有加杠杆的区间. 就没有创新的土壤.&lt;/p&gt;
@@ -1726,6 +1801,17 @@ CS:IP, SS:SP对程序的输出是信息完备的
 来源：知乎
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。&lt;/p&gt;
 &lt;p&gt;认清自我，接受现实，培养爱好消遣。我很不喜欢看印度电影三傻大闹宝莱坞，因为这鸡汤太假太空，以致有毒。一个人从事什么工作，是个三方博弈:社会需要你做的。你自己想做的。你自己擅长做的。三傻宣扬的是这三者的完美统一，你擅长做自己想做的，而这又是社会需要的。你在自己感兴趣的领域尽展才华，为社会做出贡献，这就是没有异化的劳动，所谓人的自我实现。然而事实上绝大多数人根本没有选择的资格。最扎心的不是“社会扭曲让我违心做自己不爱做的事埋没了我的才华”。而是绝大多数人根本就不存在什么“才华”。你根本没有擅长做的事。不管有没有机械式的工作，你本身就没有什么值得一提能对社会有用的思想和创意。就是打游戏都打不过别人，下棋也是臭棋篓子，搞科研也就是民科。像三傻男主那种爱好机械，又在机械上特别有才华，社会又特别需要机械人才的，叫天选之子，万中无一。鸡汤的毒就是让你产生错觉，好像这个选择只是个意愿问题，阻止你自我实现的唯有社会阻力。其实最大的问题其实是我们绝大多数都不过是个five。能干好社会想要我们做的机械劳动就很不错了——为什么要有机械劳动，要有流水线？因为创造性的，技术性的活有几个人干得来？所谓“每个人都有自己闪光点，都应该做真正的自己”的“西方先进教育理念”唯一的结果就是量产自以为是的饭桶。明白这点后，就不要在“劳动异化”上纠结了，因为绝大多数人不异化的劳动对社会没有任何价值，一个five投身民科对社会的贡献不如异化了丟去扫大街。你要做的，是分清工作是工作，生活是生活，不要试图在工作上找愉快，而是合理安排自己的下班时间做自己爱做的事。我丝毫不以我的工作为乐，但我会尽自己责任做好分内之事，以此换来我下班后有钱可以去吃自己爱吃的东西，打自己喜欢的游戏，看自己感兴趣的视频。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>蓝眼睛岛问题的bug</title>
+        <link>https://bruce2233.github.io/p/%E8%93%9D%E7%9C%BC%E7%9D%9B%E5%B2%9B%E9%97%AE%E9%A2%98%E7%9A%84bug/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://bruce2233.github.io/p/%E8%93%9D%E7%9C%BC%E7%9D%9B%E5%B2%9B%E9%97%AE%E9%A2%98%E7%9A%84bug/</guid>
+        <description>&lt;h1 id=&#34;蓝眼睛岛问题的bug&#34;&gt;蓝眼睛岛问题的bug&lt;/h1&gt;
+&lt;p&gt;冒险者并没有引入新信息，他只是让村民开启计算天数。100个村民在岛上这种情况在逻辑上就是构建不出来的。&lt;/p&gt;
+&lt;p&gt;假设某天100个蓝眼睛空降到岛上， 根本没有什么冒险者， 100天后他们还是会集体上吊。&lt;/p&gt;
 </description>
         </item>
         <item>
