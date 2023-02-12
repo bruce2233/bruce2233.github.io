@@ -1,6 +1,6 @@
 ---
 title: golang 随笔(持续更新中...)
-date: 2023-02-02
+date: 2023-02-12
 author: 岛石  
 categories: 
 - "Go"
@@ -13,6 +13,8 @@ tag:
 
 ## Golang泛型设计
 
+泛型的本质: `字符串替换`. 就是这么简单粗暴. 解释如下: Golang对于泛型的命名并非普遍的`generic` 而是 `Type Parameter`, 这个命名给我们提供了一个非常好的视角, 把类型作为变量来看待, 而变量的内容就是变量类型的字面字符串. 我们在函数定义时出现的类型变量都是形参, 调用时将形参赋值, 成为实际的变量, 所有的类型转化在编译阶段就可以全部完成. 
+
 为什么结构体/泛型不能定义泛型方法?
 
 Golang中泛型函数(`function`)的定义仅限于函数, 而不能是结构体/结构的方法(`method`).
@@ -23,6 +25,7 @@ Golang中泛型函数(`function`)的定义仅限于函数, 而不能是结构体
 [Type Parameters Proposal](https://go.googlesource.com/proposal/+/refs/heads/master/design/3651-type-parameters.md#no-parameterized-methods)
 
 [proposal: spec: allow type parameters in methods #49085](https://github.com/golang/go/issues/49085)
+
 ## 多级指针与图描述的映射-理清指针的终极解决方案## golang 泛型设计
 
 1. 直观的图描述
